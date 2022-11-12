@@ -1,0 +1,25 @@
+---
+title: "查找\U0001F50D检索"
+permalink: "/search/"
+layout: page
+author: 熊的猫
+---
+
+<br>
+  <form action="https://bing.com/search" id="searchForm">
+		<input type="text" name="q" value="" required style="border:1px solid #ddd;width:80%;float:left">
+		<input type="hidden" name="site" value="y.cool">
+		<input type="submit" value="Search" style="width:20%;float:right;border:1px solid #ddd">
+	</form>
+<br>
+<script>
+	var searchForm = document.getElementById('searchForm');
+	searchForm.onsubmit = function(){
+		var url = this.action;
+		var q = this.children['q'].value;
+		var site = this.children['site'].value;
+		var url = url + '?q='+q+' site:'+ site;
+		window.open(url);
+		return false;
+	};
+</script>

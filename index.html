@@ -1,0 +1,27 @@
+---
+layout: default
+---
+
+<main>
+  {% for post in paginator.posts %}
+    <div class="catalogue-item">
+      <h2 class="catalogue-title">
+		<a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+	  </h2>
+		<div class="catalogue-time">{{ post.date | date: "📋%Y-%m-%d　✒️熊の猫" }}</div>
+        <p>
+          {{ post.content | strip_html | truncate:120 }}&nbsp;<a class="read-more" href="{{ post.url | prepend: site.baseurl }}">Read More»</a>
+          </p>
+          <div class="hidden">Y.cool - 歪酷博客</div>
+    </div>
+  {% endfor %}
+<div class="pagination">
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="left arrow">&#8592;</a>
+  {% endif %}
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="right arrow">&#8594;</a>
+  {% endif %}
+  <span>{{ paginator.page }}</span>
+</div>
+</main>

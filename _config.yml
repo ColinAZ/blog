@@ -1,0 +1,34 @@
+---
+title: 歪酷博客
+timezone: Asia/Shanghai
+collections:
+  posts:
+    title: Posts
+    output: true
+  uploads:
+    title: Uploads
+    output: true
+description: 歪酷，歪酷博客，熊の猫，熊的猫，标准城市空巢青年。本博客基于Jekyll进行书写。源自生活的点点滴滴和碎碎念。
+baseurl: ''
+url: https://y.cool
+author:
+  name: 熊的猫
+  url: https://y.cool/about/
+  email: 8200@88.com
+markdown: kramdown
+include:
+- _pages
+sass:
+  sass_dir: _sass
+  style: compressed
+plugins:
+- jekyll-feed
+- jekyll-paginate
+- jekyll-seo-tag
+- jekyll-sitemap
+permalink: "/post/:year:month:day.html"
+paginate: 5
+exclude:
+- Gemfile
+- Gemfile.lock
+- muji.gemspec
