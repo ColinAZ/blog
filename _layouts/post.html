@@ -7,17 +7,17 @@ layout: default
 		<h2 class="post-title">{{ page.title }}</h2>
 		<div class="post-info">
 			{% if page.date %}
-			<time>{{ page.date | date: "熊の猫 写于 %Y年%m月%d日" }}</time><div class="hidden">Y.cool - 歪酷博客</div>
+			<time>{{ page.date | date: "熊の猫 写于 %Y年%m月%d日" }}</time><div class="hidden">赤县小站-Cathay.blog</div>
 			{% endif %}
 		</div>
 		{{ content }}
 	</div>
 	<div class="pagination">
 		{% if page.next.url %}
-		<div class="hidden">Y.cool - 歪酷博客</div><a href="{{ page.next.url | prepend: site.baseurl }}" class="left arrow">◀️ 上一篇</a>
+		<div class="hidden">赤县小站-Cathay.blog</div><a href="{{ page.next.url | prepend: site.baseurl }}" class="left arrow">◀️ 上一篇</a>
 		{% endif %}
 		{% if page.previous.url %}
-		<a href="{{ page.previous.url | prepend: site.baseurl }}" class="right arrow">下一篇 ▶️</a><div class="hidden">Y.cool - 歪酷博客</div>
+		<a href="{{ page.previous.url | prepend: site.baseurl }}" class="right arrow">下一篇 ▶️</a><div class="hidden">赤县小站-Cathay.blog</div>
 		{% endif %}
 	</div>
 	<div class="pagination"></div>
