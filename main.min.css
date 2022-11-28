@@ -1,3 +1,4 @@
+@import url("//cdn.staticfile.org/hack-font/3.3.0/web/hack.min.css");
 *{box-sizing:border-box;line-height:1.8}
 @font-face{font-family:'Title-text';font-style:normal;src:url(//y.cooly.cool/fonts/GMDTi.eot);src:local(''),url(//y.cooly.cool/fonts/GMDTi.eot?#iefix) format('embedded-opentype'),url(//y.cooly.cool/fonts/GMDTi.woff2) format('woff2'),url(//y.cooly.cool/fonts/GMDTi.woff) format('woff'),url(//y.cooly.cool/fonts/GMDTi.ttf) format('truetype'),url(//y.cooly.cool/fonts/GMDTi.svg#NotoSerifSC) format('svg')}
 body,html{color:#222;margin:0;padding:0}
@@ -17,7 +18,7 @@ iframe{display:block;margin:0 auto}
 .nav{width:auto;height:78px;border-bottom:1px solid #eee}
 .nav a,#results-container a{text-decoration:none}
 .nav-container,main{display:block;margin:0 auto;max-width:40em;width:95%}
-.logo{display:block;float:left;width:40px;height:40px;margin-top:19px}
+.logo{display:block;float:left;font:"hack";height:40px;margin-top:19px}
 #search-input{display:flex;max-width:512px;margin:0 auto;border:1px solid transparent;border-radius:24px;border-color:rgba(223,225,229,0);box-shadow:0 2px 8px 1px rgb(64 60 67/24%)}
 .arrowing{position:fixed;top:50%;font-size:5rem;font-weight:300;color:#f7f7f7;line-height:1;text-decoration:none;transform:scale(1,2)}
 .pagination{position:relative;text-align:center;padding:2rem 0}
