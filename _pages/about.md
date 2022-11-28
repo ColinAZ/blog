@@ -1,5 +1,5 @@
 ---
-title: "作者<i class="fa-solid fa-egg"></i>博客"
+title: "作者博客"
 permalink: "/about/"
 layout: page
 author: 熊的猫

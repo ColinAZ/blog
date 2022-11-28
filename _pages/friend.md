@@ -1,5 +1,5 @@
 ---
-title: "来了<i class="fa-solid fa-mug-hot"></i>老铁"
+title: "来了老铁"
 permalink: "/friend/"
 layout: page
 author: 熊的猫

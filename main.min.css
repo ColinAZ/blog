@@ -112,10 +112,11 @@ pre code{color:inherit;font-size:85%;padding:0;margin:0}
 .hljs-keyword,.hljs-selector-tag{color:#6b6bb8}
 .hljs-emphasis{font-style:italic}
 .hljs-strong{font-weight:700}
-.hidden,.v.vwrap.vedit.vctrl span.vpreview-btn,.comment-related{display:none!important}
-.headroom{position:fixed;top:0;left:0;right:0;transition:all .2s ease-in-out}
-.headroom--unpinned{top:-78px}
-.headroom--pinned{top:0}
+.hidden,.v.vwrap.vedit.vctrl span.vpreview-btn,.comment-related,.headroom--unpinned{display:none!important}
+.headroom--pinned{display:block}
+.headroom{will-change:transform;transition:transform200mslinear}
+.headroom--pinned{transform:translateY(0%)}
+.headroom--unpinned{transform:translateY(-100%)}
 @media (min-width:37.5em){.dropdown,.archivemobile{display:none}
   .archivedesktop{display:block;float:right;background-color:#fafafa;width:150px;margin-left:25px;padding:5px;position:sticky;top:40px;height:512px;overflow-y:auto}
   .archivedesktop, .archivedesktop a{font-size:xx-small}
