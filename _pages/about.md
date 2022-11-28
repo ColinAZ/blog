@@ -1,13 +1,11 @@
 ---
-title: "作者\U0001F4DD博客"
+title: "作者<i class="fa-solid fa-egg"></i>博客"
 permalink: "/about/"
 layout: page
 author: 熊的猫
 ---
 
->大家好，我是`熊の猫`。
->
->欢迎光临我的博客，它叫`赤县小站`，它有一个很炫酷的网址是`Cathay.blog`。
+>大家好，我是`熊の猫`。欢迎光临我的博客，它的网址是`Cathay.blog`。
 
 赤县，这个词源于《史记·孟子荀卿列传》的“中国名曰赤县神州”，指华夏、汉地、中国。
 Cathay，[kæˈθeɪ]，名词，指中国（源于契丹）。
@@ -24,13 +22,13 @@ Cathay，[kæˈθeɪ]，名词，指中国（源于契丹）。
 
 如果您有兴趣的话，欢迎给我来信。以下是我的几种联系方式：
 
->Email：Cathayⓐemail.cn（注意：ⓐ=@）
+><i class="fa-solid fa-envelope"></i>：Cathay<i class="fa-solid fa-at"></i>email.cn（注意：ⓐ=@）
 >
->QQ：5592112，[点我](http://wpa.qq.com/msgrd?v=3&uin=5592112&site=qq&menu=yes){:target="_blank"}
+><i class="fa-brands fa-qq"></i>：5592112，[点我](http://wpa.qq.com/msgrd?v=3&uin=5592112&site=qq&menu=yes){:target="_blank"}
 >
->WeChat：[微信点这，扫码加好友](https://www.douban.com/photos/photo/2625796574/){:target="_blank"}
+><i class="fa-brands fa-weixin"></i>：[微信点这，扫码加好友](https://www.douban.com/photos/photo/2625796574/){:target="_blank"}
 >
->Telegram：fm789，[点我](https://t.me/fm876){:target="_blank"}
+><i class="fa-brands fa-telegram"></i>：fm789，[点我](https://t.me/fm876){:target="_blank"}
 
 本博客采用 **[知识产权署名-非商业性使用 4.0 国际许可协议](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh){:target="_blank"}** 进行许可。
 
