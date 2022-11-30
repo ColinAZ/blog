@@ -8,7 +8,7 @@ collections:
   uploads:
     title: Uploads
     output: true
-description: Cathay.blog，Cathay Blog，熊の猫，熊的猫，标准城市空巢青年。本博客基于Jekyll进行书写。源自生活的点点滴滴和碎碎念。
+description: 华文小站,Cathay.blog,Cathay Blog,熊の猫,熊的猫,标准城市空巢青年。本博客基于Jekyll进行书写。源自生活的点点滴滴和碎碎念。
 baseurl: ''
 url: https://Cathay.blog
 author:
