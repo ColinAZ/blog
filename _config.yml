@@ -26,7 +26,7 @@ plugins:
 - jekyll-paginate
 - jekyll-seo-tag
 - jekyll-sitemap
-permalink: "/post/:year:month:day.html"
+permalink: "/post/:year:month:day"
 paginate: 5
 exclude:
 - Gemfile
