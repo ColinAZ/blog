@@ -14,10 +14,10 @@ layout: default
 	</div>
 	<div class="pagination">
 		{% if page.next.url %}
-		<div class="hidden">华文小站 - Cathay.blog</div><a href="{{ page.next.url | prepend: site.baseurl }}" class="left arrow"><i class="fa-solid fa-circle-chevron-left"></i> 上一篇</a>
+		<div class="hidden">华文小站 - Cathay.blog</div><a href="{{ page.next.url | prepend: site.baseurl }}" class="left arrow">« 上一篇</a>
 		{% endif %}
 		{% if page.previous.url %}
-		<a href="{{ page.previous.url | prepend: site.baseurl }}" class="right arrow">下一篇 <i class="fa-solid fa-circle-chevron-right"></i></a><div class="hidden">华文小站 - Cathay.blog</div>
+		<a href="{{ page.previous.url | prepend: site.baseurl }}" class="right arrow">下一篇 »</a><div class="hidden">华文小站 - Cathay.blog</div>
 		{% endif %}
 	</div>
 	<div class="pagination"></div>

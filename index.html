@@ -8,7 +8,7 @@ layout: default
       <h2 class="catalogue-title">
 		<a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
 	  </h2>
-		<div class="catalogue-time"><i class="fa-solid fa-calendar-days"></i> {{ post.date | date: "%Y-%m-%d" }}  <i class="fa-solid fa-pen"></i> 熊の猫</div>
+		<div class="catalogue-time">❒ {{ post.date | date: "%Y-%m-%d" }}  ✎ 熊の猫</div>
         <p>
           {{ post.content | strip_html | truncate:120 }}&nbsp;<a class="read-more" href="{{ post.url | prepend: site.baseurl }}">Read More»</a>
           </p>
@@ -17,10 +17,10 @@ layout: default
   {% endfor %}
 <div class="pagination">
   {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="left arrow"><i class="fa-solid fa-circle-arrow-left"></i></a>
+    <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="left arrow">⇦</a>
   {% endif %}
   {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="right arrow"><i class="fa-solid fa-circle-arrow-right"></i></a>
+    <a href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="right arrow">⇨</a>
   {% endif %}
   <span>{{ paginator.page }}</span>
 </div>
