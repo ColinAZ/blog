@@ -5,7 +5,7 @@ layout: post
 author: 熊的猫
 ---
 
-![](https://y.cooly.cool/album/20201206-1.jpg)
+![](https://files.oicp.io/album/20201206-1.jpg)
 
 是你吗？
 
@@ -156,6 +156,6 @@ author: 熊的猫
 
 我的世界都是你……
 
-![](https://y.cooly.cool/album/20201206-2.jpg)
+![](https://files.oicp.io/album/20201206-2.jpg)
 
 ###### ——By 幾米
