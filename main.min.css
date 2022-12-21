@@ -17,7 +17,7 @@ iframe{display:block;margin:0 auto}
 .nav a,#results-container a{text-decoration:none}
 .nav-container,main{display:block;margin:0 auto;max-width:40em;width:95%}
 main{margin-top:78px}
-.logo{display:block;float:left;font-weight:bold;width:140px;height:40px;padding-left:40px;margin-top:24px;background:url("//files.oicp.io/icons/img0.png") no-repeat;background-size:40px}
+.logo{display:block;float:left;font-weight:bold;width:140px;height:40px;padding-left:40px;margin-top:24px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 240'%3E%3Cswitch%3E%3Cg%3E%3Cg fill-rule='evenodd' clip-rule='evenodd'%3E%3Cpath d='M209 37.9V197c0 3.5-2.9 6.4-6.4 6.4H48.2c-3.5 0-6.4-2.9-6.4-6.4V37.9c0-3.5 2.9-6.4 6.4-6.4h154.4c3.5-.1 6.4 2.8 6.4 6.4z' fill='%23e60012'/%3E%3Cpath d='M209 105.9v7.1c-5.3-.4-10.8-.6-16.4-.6-44.4 0-80.3 13.9-80.3 30.9s36 30.9 80.3 30.9c5.6 0 11.1-.2 16.4-.7V194c0 .9-.1 1.8-.4 2.6-7.9.8-16.1 1.2-24.5 1.2-60.4 0-109.5-20.8-109.5-46.5s49-46.5 109.5-46.5c8.6-.1 16.9.3 24.9 1.1zm0 11.3v9.9c-1.1 0-2.2-.1-3.3-.1-15.3 0-27.7 4.8-27.7 10.7s12.4 10.7 27.7 10.7c1.1 0 2.2 0 3.3-.1v15.5c-2 .1-4 .1-6.1.1-33.6 0-60.8-10.5-60.8-23.4s27.2-23.4 60.8-23.4c2.1 0 4.1 0 6.1.1z' fill='%23fff'/%3E%3C/g%3E%3C/g%3E%3C/switch%3E%3C/svg%3E") no-repeat;background-size:40px}
 #search-input{display:flex;max-width:512px;margin:0 auto;border:1px solid transparent;border-radius:24px;border-color:rgba(223,225,229,0);box-shadow:0 2px 8px 1px rgb(64 60 67/24%)}
 .arrowing{position:fixed;top:50%;font-size:5rem;font-weight:300;color:#f7f7f7;line-height:1;text-decoration:none;transform:scale(1,2)}
 .pagination{position:relative;text-align:center;padding:2rem 0}
