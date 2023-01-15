@@ -30,7 +30,7 @@ main{margin-top:78px}
 .catalogue-item{display:inline-block;padding:2rem 0;border-bottom:2px dashed #fafafa}
 .catalogue-item:last-child{border-color:transparent}
 .catalogue-item:hover{border-bottom-color:#ddd}
-.catalogue-item p{font-size:1rem}
+.catalogue-item p{font-size:1rem;font-weight:300}
 .catalogue-time{color:#aaa;font-size:13.5px}
 .catalogue-title{display:block;font-size:1.3rem;font-family:'LXGW WenKai Screen';padding:10px;margin:0 0 0 -10px}
 .catalogue-title a:hover{color:#83a3b2}
