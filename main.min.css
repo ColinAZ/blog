@@ -139,13 +139,13 @@ pre code{color:inherit;font-size:85%;padding:0;margin:0}
   .thumbnail img{margin-left:-7em}
   .comment-reaction-text,.comment-item .at,.comment-item .comment-avatar,.comment-item .comment-item-children .comment-item-avatar,.desktop,.archivedesktop{display:none}
 }
-@media (prefers-color-scheme:dark){html,.nav,span.pagination_title{background:#292a2d}
+@media (prefers-color-scheme:dark){html,span.pagination_title{background:#292a2d}
   body,.dropbtn,.catalogue-item{color:#e4e4e4}
-  code{color:#a9a9b3;background-color:#3b3d42}
-  input,textarea,.archivedesktop{background:#252627}
+  code{color:#a9a9b3;background-color:#252627}
+  .nav,input,textarea,.archivedesktop{background:#252627}
   .diwen{background-image:linear-gradient(to right,rgba(37,38,39,1),rgba(37,38,39,0))}
   img,.hero.slim{filter:grayscale(30%)}
-  blockquote{color:#f0f0f0;border-radius:12px;border:0;background-color:#222}
+  blockquote{color:#f0f0f0;border-radius:5px;border:0;background-color:#3b3d42;box-shadow:0 1px 2px rgb(0 0 0 / 25%),0 0 1px rgb(0 0 0 / 25%)}
   a,.catalogue-title a,h1,h2,h3,h4,h5,.post h2 a,.post h3 a,.post h4 a,.footnote,.post-list a,footer a,.post a,p a{color:#f0f0f0}
   .dropdown-content{background-color:#3b3d42}
   .dropdown-content a{color:#a9a9b3}
