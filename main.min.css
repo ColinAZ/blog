@@ -5,7 +5,7 @@ html{font-family:'Gotham-Book',-apple-system,BlinkMacSystemFont,'Segoe UI',Robot
 h1,h2,h3,h4,h5{font-weight:inherit;line-height:normal}
 h6{text-align:right;color:#ccc}
 a{color:inherit;text-decoration:none}
-blockquote{font-family:'LXGW WenKai Screen',serif;padding:.1rem 1rem;margin:auto -1rem;background:#fafafa}
+blockquote{font-family:'LXGW WenKai Screen',serif;padding:.1rem 1rem;margin:auto -1rem;background:#fffeee}
 img{display:initial;margin:0 0 1rem;max-width:100%}
 td{vertical-align:top}
 hr{border:solid 1px transparent;border-bottom:3px dashed #efefea;margin:2rem auto;width:100%}

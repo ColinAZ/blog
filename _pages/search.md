@@ -1,6 +1,8 @@
 ---
+title: "查找检索"
+permalink: "/search/"
 layout: page
-title: Search
+author: 熊的猫
 ---
 
 <!-- HTML elements for search -->
