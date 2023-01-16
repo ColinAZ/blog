@@ -18,7 +18,7 @@ iframe{display:block;margin:0 auto}
 .nav a,#results-container a{text-decoration:none}
 .nav-container,main{display:block;margin:0 auto;max-width:40em;width:95%}
 main{margin-top:70px}
-.logo{display:block;float:left;font-size:32px;font-family:'logo';line-height:32px;margin-top:23px}
+.logo{display:block;float:left;font-size:32px;font-family:'logo';line-height:32px;margin-top:19px}
 #search-input{display:flex;max-width:512px;margin:0 auto;border:1px solid transparent;border-radius:24px;border-color:rgba(223,225,229,0);box-shadow:0 2px 8px 1px rgb(64 60 67/24%)}
 .arrowing{position:fixed;top:50%;font-size:5rem;font-weight:300;color:#f7f7f7;line-height:1;text-decoration:none;transform:scale(1,2)}
 .pagination{position:relative;text-align:center;padding:2rem 0}
@@ -113,8 +113,8 @@ pre code{color:inherit;font-size:85%;padding:0;margin:0}
 .hljs-keyword,.hljs-selector-tag{color:#6b6bb8}
 .hljs-emphasis{font-style:italic}
 .hljs-strong{font-weight:700}
-.hidden,.v.vwrap.vedit.vctrl span.vpreview-btn,.comment-related,.headroom--unpinned{display:none!important}
-.headroom{position:fixed;top:0;left:0;right:0;transition:all .2s ease-in-out}
+.hidden,.v.vwrap.vedit.vctrl span.vpreview-btn,.comment-related{display:none!important}
+.headroom{position:fixed;top:0;left:0;right:0;transition:all .6s}
 .headroom--pinned{display:block;top:0;transform:translateY(0%)}
 .headroom--unpinned{top:-70px;transform:translateY(-100%)}
 @media (min-width:37.5em){.dropdown,.archivemobile{display:none}
