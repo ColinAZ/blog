@@ -114,7 +114,7 @@ pre code{color:inherit;font-size:85%;padding:0;margin:0}
 .hljs-emphasis{font-style:italic}
 .hljs-strong{font-weight:700}
 .hidden,.v.vwrap.vedit.vctrl span.vpreview-btn,.comment-related{display:none!important}
-.headroom{position:fixed;top:0;left:0;right:0;transition:all .6s}
+.headroom{position:fixed;top:0;left:0;right:0;transition:all .3s}
 .headroom--pinned{display:block;top:0;transform:translateY(0%)}
 .headroom--unpinned{top:-70px;transform:translateY(-100%)}
 @media (min-width:37.5em){.dropdown,.archivemobile{display:none}
