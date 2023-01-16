@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: http://2hu.net/sitemap.xml
+Sitemap: https://talk.tk/sitemap.xml
