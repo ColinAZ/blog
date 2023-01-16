@@ -1,7 +1,7 @@
 *{box-sizing:border-box;line-height:1.8}
 @font-face{font-family:logo;font-style:normal;font-weight:regular;src:url(//lib.baomitu.com/fonts/zen-antique-soft/zen-antique-soft-regular.eot);src:local('Zen Antique Soft'),local('ZenAntique Soft-Normal'),url(//lib.baomitu.com/fonts/zen-antique-soft/zen-antique-soft-regular.eot?#iefix) format('embedded-opentype'),url(//lib.baomitu.com/fonts/zen-antique-soft/zen-antique-soft-regular.woff2) format('woff2'),url(//lib.baomitu.com/fonts/zen-antique-soft/zen-antique-soft-regular.woff) format('woff'),url(//lib.baomitu.com/fonts/zen-antique-soft/zen-antique-soft-regular.ttf) format('truetype'),url('//lib.baomitu.com/fonts/zen-antique-soft/zen-antique-soft-regular.svg#ZenAntique Soft') format('svg')}
 body,html{color:#222;margin:0;padding:0}
-html{font-family:'Gotham-Book',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Ubuntu,'Helvetica Neue',Helvetica,Arial,'PingFang SC','Hiragino Sans GB','Microsoft Yahei UI','Microsoft Yahei','Source Han Sans CN',sans-serif;font-size:1.2rem;overflow-y:scroll;background:transparent}
+html{font-family:'Gotham-Book',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Ubuntu,'Helvetica Neue',Helvetica,Arial,'PingFang SC','Hiragino Sans GB','Microsoft Yahei UI','Microsoft Yahei','Source Han Sans CN',sans-serif;font-size:1.2rem;overflow-y:scroll;background:#fefcf9}
 h1,h2,h3,h4,h5{font-weight:inherit;line-height:normal}
 h6{text-align:right;color:#ccc}
 a{color:inherit;text-decoration:none}
@@ -14,7 +14,7 @@ iframe{display:block;margin:0 auto}
 .animated.slideDown{top:-100px}
 .animated.slideUp{top:0}
 .container{margin:0 auto;max-width:50em;width:80%}
-.nav{width:auto;height:78px;background:#fff;border-bottom:1px solid #eee}
+.nav{width:auto;height:78px;background:#fff;box-shadow:0.25rem 0.25rem 0.25rem rgb(0 0 0 / 10%)}
 .nav a,#results-container a{text-decoration:none}
 .nav-container,main{display:block;margin:0 auto;max-width:40em;width:95%}
 main{margin-top:78px}
