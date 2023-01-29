@@ -141,7 +141,6 @@ pre code{color:inherit;font-size:85%;padding:0;margin:0}
 }
 @media (prefers-color-scheme:dark){html,span.pagination_title{background:#292a2d}
   body,.dropbtn,.catalogue-item{color:#e4e4e4}
-  code{color:#a9a9b3;background-color:#252627}
   .nav,input,textarea,.archivedesktop{background:#252627}
   .diwen{background-image:linear-gradient(to right,rgba(37,38,39,1),rgba(37,38,39,0))}
   img,.hero.slim{filter:grayscale(30%)}
