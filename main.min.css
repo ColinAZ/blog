@@ -13,7 +13,7 @@ iframe{display:block;margin:0 auto}
 .animated.slideDown{top:-100px}
 .animated.slideUp{top:0}
 .container{margin:0 auto;max-width:50em;width:80%}
-.nav{width:auto;height:50px;background:#fff;box-shadow:0.25rem 0.25rem 0.25rem rgb(0 0 0 / 10%);z-index:999}
+.nav{width:auto;height:60px;background:#fff;box-shadow:0.25rem 0.25rem 0.25rem rgb(0 0 0 / 10%);z-index:999}
 .nav a,#results-container a{text-decoration:none}
 .nav-container,main{display:block;margin:0 auto;max-width:40em;width:95%}
 main{margin-top:70px}
@@ -120,7 +120,7 @@ pre code{color:inherit;font-size:85%;padding:0;margin:0}
   .archivedesktop{display:block;float:right;background-color:#fafafa;width:150px;margin-left:25px;padding:5px;position:sticky;top:40px;height:512px;overflow-y:auto}
   .archivedesktop, .archivedesktop a{font-size:xx-small}
   .desktop{display:block;float:right}
-  .desktop ul{list-style-type:none;line-height:50px;padding:0;margin:0}
+  .desktop ul{list-style-type:none;line-height:60px;padding:0;margin:0}
   .desktop li{display:inline-block;padding-left:1rem}
   .desktop li:focus,.desktop li:hover{opacity:.6}
 }
@@ -128,7 +128,7 @@ pre code{color:inherit;font-size:85%;padding:0;margin:0}
   .nav-title{margin-top:5px}
   .band{line-height:40px}
   .post .drop-cap{font-size:5.2em;float:left;line-height:1;margin:-.09em .03em -.1em -.05em}
-  .dropbtn{font-size:1.5rem;border:0;padding:0.77rem;color:#222;background:transparent}
+  .dropbtn{font-size:1.5rem;border:0;padding:9px;color:#222;background:transparent}
   .dropdown{display:block;float:right}
   .archivemobile{display:block}
   .dropdown-content{display:none;z-index:99;position:absolute;top:50px;right:10px;background-color:#fafafa;box-shadow:0 8px 16px 0 rgba(0,0,0,.2)}
