@@ -1,5 +1,5 @@
 *{box-sizing:border-box;line-height:1.8}
-@font-face{font-family:'logo';src:url('//files.oicp.io/logo/logo.gif?r=223479542877');src:url('//files.oicp.io/logo/logo.gif?r=223479542877?#iefix') format('embedded-opentype'),url('//files.oicp.io/logo/logo.png?r=223479542877') format('woff2'),url('//files.oicp.io/logo/logo.bmp?r=223479542877') format('woff'),url('//files.oicp.io/logo/logo.jpg?r=223479542877') format('truetype');font-weight:normal;font-style:normal}
+@font-face{font-family:'logo';src:url('//china.s3.ladydaily.com/logo/logo.gif?r=223479542877');src:url('//china.s3.ladydaily.com/logo/logo.gif?r=223479542877?#iefix') format('embedded-opentype'),url('//china.s3.ladydaily.com/logo/logo.png?r=223479542877') format('woff2'),url('//china.s3.ladydaily.com/logo/logo.bmp?r=223479542877') format('woff'),url('//china.s3.ladydaily.com/logo/logo.jpg?r=223479542877') format('truetype');font-weight:normal;font-style:normal}
 body,html{color:#222;margin:0;padding:0}
 html{font-family:'Gotham-Book',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Ubuntu,'Helvetica Neue',Helvetica,Arial,'PingFang SC','Hiragino Sans GB','Microsoft Yahei UI','Microsoft Yahei','Source Han Sans CN',sans-serif;font-size:1.2rem;overflow-y:scroll;background:#fefcf9}
 h1,h2,h3,h4,h5{font-weight:inherit;line-height:normal}
