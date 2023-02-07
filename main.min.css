@@ -10,6 +10,8 @@ img{display:initial;margin:0 0 1rem;max-width:100%}
 td{vertical-align:top}
 hr{border:solid 1px transparent;border-bottom:3px dashed #efefea;margin:2rem auto;width:100%}
 iframe{display:block;margin:0 auto}
+.justify-center{display:flex;justify-content:center}
+.prbr{display:block;border:none;width:16rem;height:5px;background:url("//china.s3.ladydaily.com/files/wave.svg") 0 repeat-x}
 .animated{position:fixed;top:0;left:0;right:0;transition:all .3s ease-in-out}
 .animated.slideDown{top:-100px}
 .animated.slideUp{top:0}
