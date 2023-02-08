@@ -20,7 +20,7 @@ author: 熊的猫
 
 如果您有兴趣的话，欢迎给我来信。以下是我的几种联系方式：
 
->📧：爨@邮箱.世界（xn--l0x@xn--c0zu34b.xn--rhqv96g）
+>📧：cuanⓐemail.td
 >
 >🐧：5592112，[点我](http://wpa.qq.com/msgrd?v=3&uin=5592112&site=qq&menu=yes){:target="_blank"}
 >
