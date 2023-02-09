@@ -20,15 +20,15 @@ author: 熊的猫
 
 如果您有兴趣的话，欢迎给我来信。以下是我的几种联系方式：
 
->📧：cuanⓐemail.td
+><i class="fa-solid fa-envelope"></i>：cuanⓐemail.td
 >
->🐧：5592112，[点我](http://wpa.qq.com/msgrd?v=3&uin=5592112&site=qq&menu=yes){:target="_blank"}
+><i class="fa-brands fa-qq"></i>：5592112，[点我](http://wpa.qq.com/msgrd?v=3&uin=5592112&site=qq&menu=yes){:target="_blank"}
 >
->💬：[微信点这，扫码加好友](https://www.douban.com/photos/photo/2625796574/){:target="_blank"}
+><i class="fa-brands fa-weixin"></i>：[微信点这，扫码加好友](https://www.douban.com/photos/photo/2625796574/){:target="_blank"}
 >
->✈️：fm789，[点我](https://t.me/fm876){:target="_blank"}
+><i class="fa-brands fa-telegram"></i>：fm789，[点我](https://t.me/fm876){:target="_blank"}
 
-本博客采用 **[知识产权署名-非商业性使用 4.0 国际许可协议](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh){:target="_blank"}** 进行许可。
+本博客采用 **[知识产权署名-非商业性使用 4.0 国际许可协议 <i class="fa-brands fa-creative-commons"></i> <i class="fa-brands fa-creative-commons-by"></i> <i class="fa-brands fa-creative-commons-nc"></i> <i class="fa-brands fa-creative-commons-sa"></i>](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh){:target="_blank"}** 进行许可。
 
 最后特别感谢[@Fooleap](https://blog.fooleap.org/){:target="_blank"} 、 [@钛客志](https://fffou.com/){:target="_blank"} 和  [@水八口](https://blog.shuiba.co/){:target="_blank"} 对本博客的帮助。
 
