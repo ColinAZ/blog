@@ -7,21 +7,21 @@ layout: default
 		<h2 class="post-title">{{ page.title }}</h2>
 		<div class="post-info">
 			{% if page.date %}
-			<time>{{ page.date | date: "熊の猫 写于 %Y年%m月%d日" }}</time><div class="hidden">爨.博客-Cuan.Blog</div>
+			<time>{{ page.date | date: "熊の猫 写于 %Y年%m月%d日" }}</time><div class="hidden">爨.blog（Cuan.Blog）</div>
 			{% endif %}
 		</div>
 		{{ content }}
 	</div>
 	<div class="pagination">
 		{% if page.next.url %}
-		<div class="hidden">爨.博客-Cuan.Blog</div><a href="{{ page.next.url | prepend: site.baseurl }}" class="left arrow">« 上一篇</a>
+		<div class="hidden">爨.blog（Cuan.Blog）</div><a href="{{ page.next.url | prepend: site.baseurl }}" class="left arrow">« 上一篇</a>
 		{% endif %}
 		{% if page.previous.url %}
-		<a href="{{ page.previous.url | prepend: site.baseurl }}" class="right arrow">下一篇 »</a><div class="hidden">爨.博客-Cuan.Blog</div>
+		<a href="{{ page.previous.url | prepend: site.baseurl }}" class="right arrow">下一篇 »</a><div class="hidden">爨.blog（Cuan.Blog）</div>
 		{% endif %}
 	</div>
 	<div class="pagination"></div>
-	<div class="hidden">爨.博客-Cuan.Blog</div>
+	<div class="hidden">爨.blog（Cuan.Blog）</div>
 	<div id="tcomment"></div>
 </main>
 <script type="text/javascript" src="//lib.baomitu.com/twikoo/1.6.8/twikoo.all.min.js"></script>
