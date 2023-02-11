@@ -19,7 +19,7 @@ iframe{display:block;margin:0 auto}
 .nav{width:auto;height:60px;background:#fff;box-shadow:0.25rem 0.25rem 0.25rem rgb(0 0 0 / 10%);z-index:999}
 .nav a,#results-container a{text-decoration:none}
 .nav-container,main{display:block;margin:0 auto;max-width:40em;width:95%}
-main{margin-top:70px}
+main{margin-top:5rem}
 .logo{display:block;float:left;font-size:32px;font-family:'logo','fangsong';line-height:70px;width:70px;text-align:center;color:#fff;background-color:#aa4739}
 #search-input{display:flex;max-width:512px;margin:0 auto;border:1px solid transparent;border-radius:24px;border-color:rgba(223,225,229,0);box-shadow:0 2px 8px 1px rgb(64 60 67/24%)}
 .arrowing{position:fixed;top:50%;font-size:5rem;font-weight:300;color:#f7f7f7;line-height:1;text-decoration:none;transform:scale(1,2)}
