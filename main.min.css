@@ -6,7 +6,7 @@ html{font-family:'Gotham-Book',-apple-system,BlinkMacSystemFont,'Segoe UI',Robot
 h1,h2,h3,h4,h5{font-weight:inherit;line-height:normal}
 h6{text-align:right;color:#ccc}
 a{color:inherit;text-decoration:none}
-blockquote{font-family:'Noto Serif SC',serif;font-weight:200;padding:.1rem 1rem;margin:auto -1rem;background:#fffeee}
+blockquote{font-family:'Noto Serif SC',serif;padding:.1rem 1rem;margin:auto -1rem;background:#fffeee}
 img{display:initial;margin:0 0 1rem;max-width:100%}
 td{vertical-align:top}
 hr{margin:2rem auto;border:none;width:16rem;height:5px;background:url(//cc.0static.com/files/wave.svg) 0 repeat-x}
@@ -115,7 +115,7 @@ pre code{color:inherit;font-size:85%;padding:0;margin:0}
 .hljs-emphasis{font-style:italic}
 .hljs-strong{font-weight:700}
 .hidden,.v.vwrap.vedit.vctrl span.vpreview-btn,.comment-related{display:none!important}
-.headroom{position:fixed;top:0;left:0;right:0;transition:all .3s}
+.headroom{position:fixed;top:0;left:0;right:0;z-index:999;transition:all .3s}
 .headroom--pinned{display:block;top:0;transform:translateY(0%)}
 .headroom--unpinned{top:-70px;transform:translateY(-100%)}
 @media (min-width:37.5em){.dropdown,.archivemobile{display:none}

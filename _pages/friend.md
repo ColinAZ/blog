@@ -1,5 +1,5 @@
 ---
-title: "来了老铁"
+title: "来了🎉老铁"
 permalink: "/friend/"
 layout: page
 author: 熊的猫

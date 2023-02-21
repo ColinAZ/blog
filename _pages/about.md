@@ -1,5 +1,5 @@
 ---
-title: "关于我的"
+title: "我和📔博客"
 permalink: "/about/"
 layout: page
 author: 熊的猫
@@ -29,7 +29,7 @@ author: 熊的猫
 >
 ><i class="fa-brands fa-telegram"></i>：fm789，[点我](https://t.me/fm876){:target="_blank"}
 
-本博客采用 **[ <i class="fa-brands fa-creative-commons"></i> <i class="fa-brands fa-creative-commons-by"></i> <i class="fa-brands fa-creative-commons-nc"></i> <i class="fa-brands fa-creative-commons-sa"></i>](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh){:target="_blank"}** （知识产权署名-非商业性使用 4.0 国际许可协议）进行许可。
+本博客采用 **[ <i class="fa-brands fa-creative-commons"></i> <i class="fa-brands fa-creative-commons-by"></i> <i class="fa-brands fa-creative-commons-nc"></i> <i class="fa-brands fa-creative-commons-sa"></i>](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh){:target="_blank"}** `（知识产权署名-非商业性使用 4.0 国际许可协议）`进行许可。
 
 最后特别感谢[@Fooleap](https://blog.fooleap.org/){:target="_blank"} 、 [@钛客志](https://fffou.com/){:target="_blank"} 和  [@水八口](https://blog.shuiba.co/){:target="_blank"} 对本博客的帮助。
 
