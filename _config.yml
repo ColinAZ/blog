@@ -1,5 +1,5 @@
 ---
-title: 爨.blog
+title: 薄荷日记
 timezone: Asia/Shanghai
 collections:
   posts:
@@ -8,12 +8,12 @@ collections:
   uploads:
     title: Uploads
     output: true
-description: 爨.blog,爨.博客,cuan.blog,熊の猫,熊的猫,一个博客树洞。本博客基于Jekyll进行书写。源自生活的点点滴滴和碎碎念。
+description: 薄荷日记,blog.bh,熊の猫,熊的猫,一个博客树洞。本博客基于Jekyll进行书写。源自生活的点点滴滴和碎碎念。
 baseurl: ''
-url: https://cuan.blog
+url: https://blog.bh
 author:
   name: 熊的猫
-  url: https://cuan.blog/about/
+  url: https://blog.bh/about/
   email: 8200@88.com
 markdown: kramdown
 include:
