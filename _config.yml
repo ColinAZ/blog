@@ -1,5 +1,5 @@
 ---
-title: 言井
+title: 放牧
 timezone: Asia/Shanghai
 collections:
   posts:
@@ -8,12 +8,12 @@ collections:
   uploads:
     title: Uploads
     output: true
-description: 言井,talk.cm,熊の猫,熊的猫,一个博客树洞。本博客基于Jekyll进行书写。源自生活的点点滴滴和碎碎念。
+description: 放牧,fang.mu,熊の猫,熊的猫,一个博客树洞。本博客基于Jekyll进行书写。源自生活的点点滴滴和碎碎念。
 baseurl: ''
-url: https://talk.cm
+url: https://fang.mu
 author:
   name: 熊的猫
-  url: https://talk.cm/about/
+  url: https://fang.mu/about/
   email: 8200@88.com
 markdown: kramdown
 include:
