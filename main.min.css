@@ -2,11 +2,11 @@
 @font-face{font-family:'logo';src:url(//public.jstatic.net/fonts/ologo.gif?r=280);src:url(//public.jstatic.net/fonts/ologo.gif?r=280?#iefix) format('embedded-opentype'),url(//public.jstatic.net/fonts/ologo.png?r=280) format('woff2'),url(//public.jstatic.net/fonts/ologo.bmp?r=280) format('woff'),url(//public.jstatic.net/fonts/ologo.jpg?r=280) format('truetype');font-weight:400;font-style:normal}
 @font-face{font-family:'Noto Serif SC';font-style:normal;font-weight:regular;src:url(//lib.baomitu.com/fonts/noto-serif-sc/noto-serif-sc-regular.eot);src:local('Noto Serif SC'),local('NotoSerif SC-Normal'),url(//lib.baomitu.com/fonts/noto-serif-sc/noto-serif-sc-regular.eot?#iefix) format('embedded-opentype'),url(//lib.baomitu.com/fonts/noto-serif-sc/noto-serif-sc-regular.woff2) format('woff2'),url(//lib.baomitu.com/fonts/noto-serif-sc/noto-serif-sc-regular.woff) format('woff'),url(//lib.baomitu.com/fonts/noto-serif-sc/noto-serif-sc-regular.ttf) format('truetype'),url('//lib.baomitu.com/fonts/noto-serif-sc/noto-serif-sc-regular.svg#NotoSerif SC') format('svg')}
 body,html{color:#222;margin:0;padding:0}
-html{font-family:'Gotham-Book',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Ubuntu,'Helvetica Neue',Helvetica,Arial,'PingFang SC','Hiragino Sans GB','Microsoft Yahei UI','Microsoft Yahei','Source Han Sans CN',sans-serif;font-size:1.2rem;overflow-y:scroll;background:#fefcf9}
+html{font-family:'Gotham-Book',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Ubuntu,'Helvetica Neue',Helvetica,Arial,'PingFang SC','Hiragino Sans GB','Microsoft Yahei UI','Microsoft Yahei','Source Han Sans CN',sans-serif;font-size:1.2rem;overflow-y:scroll}
 h1,h2,h3,h4,h5{font-weight:inherit;line-height:normal}
 h6{text-align:right;color:#ccc}
 a{color:inherit;text-decoration:none}
-blockquote{font-family:'Noto Serif SC',serif;padding:.1rem 1rem;margin:auto -1rem;background:#fafafa}
+blockquote{font-family:'Noto Serif SC',serif;padding:.1rem 1rem;margin:auto -1rem;background:#f8f9fa}
 img{display:initial;margin:0 0 1rem;max-width:100%}
 td{vertical-align:top}
 hr{margin:2rem auto;border:none;width:16rem;height:5px;background:url(//public.jstatic.net/files/wave.svg) 0 repeat-x}
@@ -17,7 +17,7 @@ iframe{display:block;margin:0 auto}
 .animated.slideDown{top:-100px}
 .animated.slideUp{top:0}
 .container{margin:0 auto;max-width:50em;width:80%}
-.nav{width:auto;height:60px;background:#fff;box-shadow:0.25rem 0.25rem 0.25rem rgb(0 0 0 / 10%);z-index:999}
+.nav{width:auto;height:60px;background:#f8f9fa;z-index:999}
 .nav a,#results-container a{text-decoration:none}
 .nav-container,main{display:block;margin:0 auto;max-width:40em;width:95%}
 main{margin-top:5rem}
