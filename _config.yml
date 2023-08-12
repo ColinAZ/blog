@@ -9,7 +9,7 @@ collections:
     title: Uploads
     output: true
 description: 抓马的博客,抓馬,抓馬的博客,zhua.ma,熊の猫,熊的猫,一个博客树洞。本博客基于Jekyll进行书写。源自生活的点点滴滴和碎碎念。
-baseurl: ''
+baseurl: 'https://zhua.ma'
 url: https://zhua.ma
 author:
   name: 熊的猫
