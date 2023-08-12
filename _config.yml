@@ -1,5 +1,5 @@
 ---
-title: 生活赞歌
+title: 抓马的博客
 timezone: Asia/Shanghai
 collections:
   posts:
@@ -8,13 +8,13 @@ collections:
   uploads:
     title: Uploads
     output: true
-description: 生活赞歌,赞歌,zan.ge,.ge domain,熊の猫,熊的猫,一个博客树洞。本博客基于Jekyll进行书写。源自生活的点点滴滴和碎碎念。
+description: 抓马的博客,抓馬,抓馬的博客,zhua.ma,熊の猫,熊的猫,一个博客树洞。本博客基于Jekyll进行书写。源自生活的点点滴滴和碎碎念。
 baseurl: ''
-url: https://zan.ge
+url: https://zhua.ma
 author:
   name: 熊的猫
-  url: https://zan.ge/about/
-  email: 8200@88.com
+  url: https://zhua.ma/about/
+  email: zhuama@163.net
 markdown: kramdown
 include:
 - _pages
@@ -26,7 +26,7 @@ plugins:
 - jekyll-paginate
 - jekyll-seo-tag
 - jekyll-sitemap
-permalink: "/post/:year:month:day"
+permalink: "/post/:year:month:day.html"
 paginate: 5
 exclude:
 - Gemfile
