@@ -17,7 +17,7 @@ iframe{display:block;margin:0 auto}
 .animated.slideDown{top:-100px}
 .animated.slideUp{top:0}
 .container{margin:0 auto;max-width:50em;width:80%}
-.nav{width:auto;height:60px;background:#f6f8fa;z-index:999}
+.nav{width:auto;height:60px;background:#fff;box-shadow:0px 16px 32px rgba(0,0,0,0.04);z-index:999}
 .nav a,#results-container a{text-decoration:none}
 .nav-container,main{display:block;margin:0 auto;max-width:40em;width:95%}
 main{margin-top:5rem}
