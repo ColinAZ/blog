@@ -1,5 +1,5 @@
 ---
-title: "我🈴博客"
+title: "我✍博客"
 permalink: "/about/"
 layout: page
 author: 熊的猫
