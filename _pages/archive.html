@@ -27,7 +27,7 @@ layout: default
     {% assign currentMonth = post.date | date: "%B %Y" %}
     {% assign currentYear = post.date | date: "%Y" %}
     {% if currentYear != myYear %}
-      <br /><b>🗓 {{ currentYear }}年</b><br />
+      <br /><b>📔 {{ currentYear }}年</b><br />
       {% assign myYear = currentYear %}
     {% endif %}
     {% if currentMonth != myMonth %}
