@@ -1,5 +1,5 @@
 ---
-title: "查找🔎检索"
+title: "搜索 / Search / 検索けんさく / 검색"
 permalink: "/search/"
 layout: page
 author: 熊的猫
