@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://zhua.ma/sitemap.xml
+Sitemap: https://8kg.net/sitemap.xml
