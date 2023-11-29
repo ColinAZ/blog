@@ -1,5 +1,5 @@
 ---
-title: 抓马的博客
+title: 8千克笔记
 timezone: Asia/Shanghai
 collections:
   posts:
@@ -8,13 +8,13 @@ collections:
   uploads:
     title: Uploads
     output: true
-description: 抓马的博客,抓馬,抓馬的博客,zhua.ma,熊の猫,熊的猫,一个博客树洞。本博客基于Jekyll进行书写。源自生活的点点滴滴和碎碎念。
+description: 8千克笔记,8千克,八千克,8kg,8kg.net,熊の猫,熊的猫,一个博客树洞。本博客基于Jekyll进行书写。源自生活的点点滴滴和碎碎念。
 baseurl: ''
-url: https://zhua.ma
+url: https://8kg.net
 author:
   name: 熊的猫
-  url: https://zhua.ma/about/
-  email: me@zhua.ma
+  url: https://8kg.net/about/
+  email: me@8kg.net
 markdown: kramdown
 include:
 - _pages
