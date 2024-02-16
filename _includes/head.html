@@ -1,20 +1,18 @@
 <head>
   <title>
-    {% if page.title %}{{ page.title | escape }} - 八千克言（8kg.net）
-    {% elsif paginator.previous_page %}第{{ paginator.page }}／{{ paginator.total_pages }}页 - 八千克言（8kg.net）
-    {% else %}八千克言 - 思想有多远，我们就能扯多远……（8kg.net）
+    {% if page.title %}{{ page.title | escape }} - 博客沙龙（blog.salon）
+    {% elsif paginator.previous_page %}第{{ paginator.page }}／{{ paginator.total_pages }}页 - 博客沙龙（blog.salon）
+    {% else %}博客沙龙（blog.salon）
     {% endif %}
   </title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
-  <meta property="author" content="熊の猫">
-  <link rel="dns-prefetch" href="//tcb-api.tencentcloudapi.com">
+  <meta property="author" content="刘看山">
   <link rel="dns-prefetch" href="//lib.baomitu.com">
   <link rel="dns-prefetch" href="//china.s3.bitiful.net">
   <link rel="stylesheet" href="//lib.baomitu.com/font-awesome/6.3.0/css/all.min.css">
-  <link rel="stylesheet" href="/main.min.css?v=0.1">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>8️⃣</text></svg>">
-  <link rel="alternate" type="application/atom+xml" title="RSS of 8kg.net" href="//8kg.net/feed.xml">
+  <link rel="stylesheet" href="/main.min.css?v=1">
+  <link rel="alternate" type="application/atom+xml" title="RSS of blog.salon" href="//blog.salon/feed.xml">
   {% feed_meta %}
 </head>

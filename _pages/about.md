@@ -2,10 +2,10 @@
 title: "关于 / About / 私について / 블로그소개"
 permalink: "/about/"
 layout: page
-author: 熊的猫
+author: 刘看山
 ---
 
->大家好，我是`熊の猫`。欢迎光临我的博客，它的名字叫`8️⃣千克言`，网址也挺好记的——`8kg.net`。
+>大家好，我是`刘看山`。欢迎光临我的博客，它的名字叫`博客沙龙`，网址也挺好记的——`blog.salon`。
 >
 >大多数人的日常生活是在平凡和普通之中，诗意和远方基本只能用来憧憬。灵魂在远方游荡，肉体在眼前纠结。
 >
@@ -25,7 +25,7 @@ author: 熊的猫
 
 如果您有兴趣的话，欢迎给我来信。以下是我的几种联系方式：
 
-><i class="fa-solid fa-envelope"></i>：meⓐ8kg.net
+><i class="fa-solid fa-envelope"></i>：meⓐblog.salon
 >
 ><i class="fa-brands fa-qq"></i>：5592112，[点我](http://wpa.qq.com/msgrd?v=3&uin=5592112&site=qq&menu=yes){:target="_blank"}
 >

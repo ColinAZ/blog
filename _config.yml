@@ -1,5 +1,5 @@
 ---
-title: 八千克言
+title: 博客沙龙
 timezone: Asia/Shanghai
 collections:
   posts:
@@ -8,13 +8,13 @@ collections:
   uploads:
     title: Uploads
     output: true
-description: 八千克言,8千克,八千克,8kg,8kg.net,熊の猫,熊的猫,一个博客树洞。本博客基于Jekyll进行书写。源自生活的点点滴滴和碎碎念。
+description: 博客沙龙,blog salon,blog.salon,刘看山,一个博客树洞。本博客基于Jekyll进行书写。源自生活的点点滴滴和碎碎念。
 baseurl: ''
-url: https://8kg.net
+url: https://blog.salon
 author:
   name: 熊的猫
-  url: https://8kg.net/about/
-  email: me@8kg.net
+  url: https://blog.salon/about/
+  email: me@blog.salon
 markdown: kramdown
 include:
 - _pages

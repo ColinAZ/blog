@@ -7,7 +7,7 @@ layout: default
 		<h2 class="post-title">{{ page.title }}</h2>
 		<div class="post-info">
 			{% if page.date %}
-			<time>{{ page.date | date: "熊の猫 写于 %Y年%m月%d日" }}</time><div class="hidden">8千克笔记（8kg.net）</div>
+			<time>{{ page.date | date: "熊の猫 写于 %Y年%m月%d日" }}</time><div class="hidden">博客沙龙（blog.salon）</div>
 			<hr>
 			{% endif %}
 		</div>
@@ -15,18 +15,30 @@ layout: default
 	</div>
 	<div class="pagination">
 		{% if page.next.url %}
-		<div class="hidden">8千克笔记（8kg.net）</div><a href="{{ page.next.url | prepend: site.baseurl }}" class="left arrow">« 上一篇</a>
+		<div class="hidden">博客沙龙（blog.salon）</div><a href="{{ page.next.url | prepend: site.baseurl }}" class="left arrow">« 上一篇</a>
 		{% endif %}
 		{% if page.previous.url %}
-		<a href="{{ page.previous.url | prepend: site.baseurl }}" class="right arrow">下一篇 »</a><div class="hidden">8千克笔记（8kg.net）</div>
+		<a href="{{ page.previous.url | prepend: site.baseurl }}" class="right arrow">下一篇 »</a><div class="hidden">博客沙龙（blog.salon）</div>
 		{% endif %}
 	</div>
 	<div class="pagination"></div>
-	<div class="hidden">8千克笔记（8kg.net）</div>
-	<div id="tcomment"></div>
+	<div class="hidden">博客沙龙（blog.salon）</div>
+	<div id="gitalk-container"></div>
 </main>
-<script type="text/javascript" src="//lib.baomitu.com/twikoo/1.6.8/twikoo.all.min.js"></script>
-<script>twikoo.init({ envId: 'china-5ghlaxxv56ddd352', el: '#tcomment' })</script>
+<link rel="stylesheet" href="//lib.baomitu.com/gitalk/1.8.0/gitalk.min.css">
+<script src="//lib.baomitu.com/gitalk/1.8.0/gitalk.min.js"></script>
+<script>
+  var gitalk = new Gitalk({
+  clientID: '1e39e580bea2c45df802',
+  clientSecret: '275c84d22db23bec34707a8ae321613ed246fe18',
+  repo: 'wx8.github.io',
+  owner: 'wx8',
+  admin: ['wx8'],
+  id: location.pathname,
+  distractionFreeMode: false
+})
+gitalk.render('gitalk-container')
+</script>
 <script type="text/javascript" src="//lib.baomitu.com/highlight.js/11.4.0/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 <script type="text/javascript" src="//lib.baomitu.com/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
