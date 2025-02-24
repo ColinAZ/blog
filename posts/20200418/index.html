@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> 又搬家 | 穷光蛋博客🥚Qiong.me</title>
+  <link rel = 'canonical' href = 'http://localhost:1313/posts/20200418/'>
+  <meta name="description" content="有些人，你看见他整天都开心，率真得像个小孩，人人都羡慕他。其实，他就像向日葵，向着太阳的正面永远明媚，在照不到的背面将悲伤深藏。">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:url" content="http://localhost:1313/posts/20200418/">
+  <meta property="og:site_name" content="穷光蛋博客">
+  <meta property="og:title" content="又搬家">
+  <meta property="og:description" content="不知道是出于成本还是其他什么因素的考虑，Coding Pages服务器已经搬迁到了腾讯云新加坡。虽然访问速度没有什么太大的差别，但是偶尔会因为网络的问题，博客闹闹小情绪——间歇性打不开。虽然时间不是很长，也没有什么规律可言，但是作为一个上升星座是处女座的我来说，多少心里也会有些不舒服。
+另外，诺贝尔经济学奖得主詹姆斯·托宾曾说过:“鸡蛋不要放在一个篮子里。”这在今天的互联网世界同样受用。在成本的支出不变的情况下，谁不愿意多做几个应急备份呢？所以就有了为我的博客找个一新家的想法。
+由于博客用的是Jekyll，而我又没在本地搭建博客环境，所以以往都是通过Coding Pages自己部署的，因此，最好新的环境也可以集成这样的环境。
+首先考虑的是Github Pages，但是它不支持sitemap等插件。后来的netlify、Gitlab等等也是如此。遂放弃。
+目光又拖回了国内。我发现码云的gitee pages和Coding Pages大体相同，该集成的插件也都集成了，而且托管在阿里云，速度比Coding Pages快了一点点。唯一的不足是——要！收！费！才能绑域名。价格说高不高，说少也不少，99元/年。咬咬牙，就付费了。然后就把博客整体搬家到了码云Gitee了。
+现在还有一个小问题比较困扰：gitee pages和Coding Pages的SSL证书机制不一样，Coding Pages采用系统自动签发let’s encrypt证书，而码云的gitee pages则是自购证书。这点很头疼，因为DNS的CAA无法正常设置了。我再找找，看看是否有解决的方法吧。
+另外，最近忙到起飞，天然996。">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2020-04-18T08:00:00+08:00">
+    <meta property="article:modified_time" content="2020-04-18T08:00:00+08:00">
+
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="又搬家">
+  <meta name="twitter:description" content="不知道是出于成本还是其他什么因素的考虑，Coding Pages服务器已经搬迁到了腾讯云新加坡。虽然访问速度没有什么太大的差别，但是偶尔会因为网络的问题，博客闹闹小情绪——间歇性打不开。虽然时间不是很长，也没有什么规律可言，但是作为一个上升星座是处女座的我来说，多少心里也会有些不舒服。
+另外，诺贝尔经济学奖得主詹姆斯·托宾曾说过:“鸡蛋不要放在一个篮子里。”这在今天的互联网世界同样受用。在成本的支出不变的情况下，谁不愿意多做几个应急备份呢？所以就有了为我的博客找个一新家的想法。
+由于博客用的是Jekyll，而我又没在本地搭建博客环境，所以以往都是通过Coding Pages自己部署的，因此，最好新的环境也可以集成这样的环境。
+首先考虑的是Github Pages，但是它不支持sitemap等插件。后来的netlify、Gitlab等等也是如此。遂放弃。
+目光又拖回了国内。我发现码云的gitee pages和Coding Pages大体相同，该集成的插件也都集成了，而且托管在阿里云，速度比Coding Pages快了一点点。唯一的不足是——要！收！费！才能绑域名。价格说高不高，说少也不少，99元/年。咬咬牙，就付费了。然后就把博客整体搬家到了码云Gitee了。
+现在还有一个小问题比较困扰：gitee pages和Coding Pages的SSL证书机制不一样，Coding Pages采用系统自动签发let’s encrypt证书，而码云的gitee pages则是自购证书。这点很头疼，因为DNS的CAA无法正常设置了。我再找找，看看是否有解决的方法吧。
+另外，最近忙到起飞，天然996。">
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/styles.43002f6ce2899695ba7fe36aebb08b5955184df3db157e5f0d19aeb21c94d9606d6c52d4b30c7471c8e16b336f7318689d729b988fd414cc1ef1f2b3681e33e0.css" integrity="sha512-QwAvbOKJlpW6f&#43;Nq67CLWVUYTfPbFX5fDRmushyU2WBtbFLUswx0ccjhazNvcxhonXKbmI/UFMwe8fKzaB4z4A=="> 
+
+  
+   <link rel="stylesheet" href="http://localhost:1313/css/custom.css"> 
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥚</text></svg>" />
+
+  
+  
+  
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div id="header-post">
+  <a id="menu-icon" href="#">🥚</a>
+  <a id="menu-icon-tablet" href="#">🥚</a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">🏠主页</a></li>
+         
+        <li><a href="/posts">🗓归档</a></li>
+         
+        <li><a href="/about">🤔关于</a></li>
+         
+        <li><a href="/friend">🔗友链</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" http://localhost:1313/posts/20200404/" aria-label="Previous">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="http://localhost:1313/posts/20200430/" aria-label="Next">
+            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
+          </a>
+        </li>
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#" aria-label="Share">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇文章</span>
+      <span id="i-next" class="info" style="display:none;">下一篇文章</span>
+      <span id="i-top" class="info" style="display:none;">返回到顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享到外部</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="https://service.weibo.com/share/share.php?appkey=1881139527&title=%e5%8f%88%e6%90%ac%e5%ae%b6&url=http%3a%2f%2flocalhost%3a1313%2fposts%2f20200418%2f" aria-label="Weibo">
+      <i class="fab fa-weibo " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pan.baidu.com/share/qrcode?w=512&h=512&url=http%3a%2f%2flocalhost%3a1313%2fposts%2f20200418%2f" aria-label="WeChat">
+      <i class="fab fa-weixin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=http%3a%2f%2flocalhost%3a1313%2fposts%2f20200418%2f&text=%e5%8f%88%e6%90%ac%e5%ae%b6" aria-label="x-twitter">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http%3a%2f%2flocalhost%3a1313%2fposts%2f20200418%2f&is_video=false&description=%e5%8f%88%e6%90%ac%e5%ae%b6" aria-label="Pinterest">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=%e5%8f%88%e6%90%ac%e5%ae%b6&body=Check out this article: http%3a%2f%2flocalhost%3a1313%2fposts%2f20200418%2f" aria-label="Email">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+ </ul>
+
+    </div>
+    
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        又搬家
+      </h1>
+      <div class="meta">
+        
+        <div class="postdate">
+          
+          <time datetime="2020-04-18 08:00:00 &#43;0800 CST" itemprop="datePublished">2020-04-18</time>
+          
+        </div>
+        
+        
+        
+        
+      </div>
+    </header>
+
+  
+    
+    <div id="toc">
+      <nav id="TableOfContents"></nav>
+    </div>
+    
+    <div class="content" itemprop="articleBody">
+      <p>不知道是出于成本还是其他什么因素的考虑，Coding Pages服务器已经搬迁到了腾讯云新加坡。虽然访问速度没有什么太大的差别，但是偶尔会因为网络的问题，博客闹闹小情绪——间歇性打不开。虽然时间不是很长，也没有什么规律可言，但是作为一个上升星座是处女座的我来说，多少心里也会有些不舒服。</p>
+<p>另外，诺贝尔经济学奖得主詹姆斯·托宾曾说过:“鸡蛋不要放在一个篮子里。”这在今天的互联网世界同样受用。在成本的支出不变的情况下，谁不愿意多做几个应急备份呢？所以就有了为我的博客找个一新家的想法。</p>
+<p>由于博客用的是Jekyll，而我又没在本地搭建博客环境，所以以往都是通过Coding Pages自己部署的，因此，最好新的环境也可以集成这样的环境。</p>
+<p>首先考虑的是Github Pages，但是它不支持sitemap等插件。后来的netlify、Gitlab等等也是如此。遂放弃。</p>
+<p>目光又拖回了国内。我发现码云的gitee pages和Coding Pages大体相同，该集成的插件也都集成了，而且托管在阿里云，速度比Coding Pages快了一点点。唯一的不足是——要！收！费！才能绑域名。价格说高不高，说少也不少，99元/年。咬咬牙，就付费了。然后就把博客整体搬家到了码云Gitee了。</p>
+<p>现在还有一个小问题比较困扰：gitee pages和Coding Pages的SSL证书机制不一样，Coding Pages采用系统自动签发let’s encrypt证书，而码云的gitee pages则是自购证书。这点很头疼，因为DNS的CAA无法正常设置了。我再找找，看看是否有解决的方法吧。</p>
+<p>另外，最近忙到起飞，天然996。</p>
+
+    </div>
+  </article>
+
+  
+  
+
+
+
+
+
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">🏠主页</a></li>
+         
+          <li><a href="/posts">🗓归档</a></li>
+         
+          <li><a href="/about">🤔关于</a></li>
+         
+          <li><a href="/friend">🔗友链</a></li>
+        
+      </ul>
+    </div>
+
+    
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="https://service.weibo.com/share/share.php?appkey=1881139527&title=%e5%8f%88%e6%90%ac%e5%ae%b6&url=http%3a%2f%2flocalhost%3a1313%2fposts%2f20200418%2f" aria-label="Weibo">
+      <i class="fab fa-weibo fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pan.baidu.com/share/qrcode?w=512&h=512&url=http%3a%2f%2flocalhost%3a1313%2fposts%2f20200418%2f" aria-label="WeChat">
+      <i class="fab fa-weixin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=http%3a%2f%2flocalhost%3a1313%2fposts%2f20200418%2f&text=%e5%8f%88%e6%90%ac%e5%ae%b6" aria-label="x-twitter">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http%3a%2f%2flocalhost%3a1313%2fposts%2f20200418%2f&is_video=false&description=%e5%8f%88%e6%90%ac%e5%ae%b6" aria-label="Pinterest">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=%e5%8f%88%e6%90%ac%e5%ae%b6&body=Check out this article: http%3a%2f%2flocalhost%3a1313%2fposts%2f20200418%2f" aria-label="Email">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+ </ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;" aria-label="Menu">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').toggle();return false;" aria-label="Share">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2025  穷光蛋博客 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">🏠主页</a></li>
+         
+        <li><a href="/posts">🗓归档</a></li>
+         
+        <li><a href="/about">🤔关于</a></li>
+         
+        <li><a href="/friend">🔗友链</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+
+<script src=/js/code-copy.js></script>
+
+
+
+
+</html>

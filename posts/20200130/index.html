@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> INWX域名如何设置CloudFlare的DNSSEC | 穷光蛋博客🥚Qiong.me</title>
+  <link rel = 'canonical' href = 'http://localhost:1313/posts/20200130/'>
+  <meta name="description" content="有些人，你看见他整天都开心，率真得像个小孩，人人都羡慕他。其实，他就像向日葵，向着太阳的正面永远明媚，在照不到的背面将悲伤深藏。">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:url" content="http://localhost:1313/posts/20200130/">
+  <meta property="og:site_name" content="穷光蛋博客">
+  <meta property="og:title" content="INWX域名如何设置CloudFlare的DNSSEC">
+  <meta property="og:description" content="我这个域名是在INWX{:target=&#34;_blank&#34;}注册的，因为价格便宜。注册后发现，INWX的域名管理系统相当完善，不仅有强大的DNS管理系统、免费的SSL、Glue Records、Master/Slave DNS等，同样也支持DNSSEC。但是，当我尝试用CloudFlare提供的DNSSEC参数的时候，却发现INWX必须手动配置DNSSEC才行。
+因此，编写了这个简短的教程，希望能够帮助更多的人。
+用Cloudflare准备DNSSEC 首先第一步是要开启CloudFlare的DNSSEC，它就在DNS选项卡下面一点点的位置。找到DNSSEC之后，单击Enable DNSSEC开启DNSSEC。这时你将会看到有关DNSSEC配置的许多参数，Cloudflare要求我们将这些信息添加到域名注册平台中去。由于域名是在INWX注册的，所以接下来去INWX登录吧。
+在INWX站点上设置DNSSEC 登录INWX后，在侧栏中搜索DNSSEC选项卡，然后在打开的页面上单击Add DNSSEC（页面右上角很小的一个按钮），这时会弹出一个窗口。在该弹出窗口中，首先填入你要添加DNSSEC的域名，然后取消选中automatic modus的复选框，这时将弹出两个附加字段。不要被名称迷惑了（CloudFlare和INWX的DS Record不是一回事），我们只需要填写第一个字段就可以了。
+不过，在INWX家的DNSKEY RR记录，并不能直接复制和粘贴使用Cloudflare管理面板中的参数。我们必须要自己手动建立（这里是唯一的难点）。好在官方提供和的DNSSEC规范很有帮助。
+如何从Cloudflare的参数中构建DNSKEY RR记录 Cloudflare在DNSSEC面板中提供了很多值，但没有提供易于复制的DNSKEY RR记录。好在自行构建非常容易。打开文本编辑器稍加改造就可以使用了。
+首先，从Cloudflare复制DS Record值。 将IN DS替换为IN DNSKEY。 用Flags值（即257）替换指定为Key Tag的字符串后的数字（即2345）。 用3 13替换最后两个数字，例如13 2，因为3是DNSKEY记录中的固定值，而13是Cloudflare使用的官方算法。 用公共密钥字段的值替换最后一个长字符串。 现在通过改造，我们会得到一个类似于以下内容的记录：
+yourdomain.com. 3600 IN DNSKEY 257 3 13 oJB1W6WNGv&#43;ldv[...]eDQfsS3Ap3o= 然后把上面这些文本粘贴到INWX的DNSKEY RR字段中，因此它看起来像这样：
+单击SAVE按钮，就算大功告成了。不过这时候，Cloudflare还无法正确识别已配置的域名，这需要一点时间。我们可以沏一杯茶，边看新型冠状病毒的新闻，边等它生效了。">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2020-01-30T08:00:00+08:00">
+    <meta property="article:modified_time" content="2020-01-30T08:00:00+08:00">
+
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="INWX域名如何设置CloudFlare的DNSSEC">
+  <meta name="twitter:description" content="我这个域名是在INWX{:target=&#34;_blank&#34;}注册的，因为价格便宜。注册后发现，INWX的域名管理系统相当完善，不仅有强大的DNS管理系统、免费的SSL、Glue Records、Master/Slave DNS等，同样也支持DNSSEC。但是，当我尝试用CloudFlare提供的DNSSEC参数的时候，却发现INWX必须手动配置DNSSEC才行。
+因此，编写了这个简短的教程，希望能够帮助更多的人。
+用Cloudflare准备DNSSEC 首先第一步是要开启CloudFlare的DNSSEC，它就在DNS选项卡下面一点点的位置。找到DNSSEC之后，单击Enable DNSSEC开启DNSSEC。这时你将会看到有关DNSSEC配置的许多参数，Cloudflare要求我们将这些信息添加到域名注册平台中去。由于域名是在INWX注册的，所以接下来去INWX登录吧。
+在INWX站点上设置DNSSEC 登录INWX后，在侧栏中搜索DNSSEC选项卡，然后在打开的页面上单击Add DNSSEC（页面右上角很小的一个按钮），这时会弹出一个窗口。在该弹出窗口中，首先填入你要添加DNSSEC的域名，然后取消选中automatic modus的复选框，这时将弹出两个附加字段。不要被名称迷惑了（CloudFlare和INWX的DS Record不是一回事），我们只需要填写第一个字段就可以了。
+不过，在INWX家的DNSKEY RR记录，并不能直接复制和粘贴使用Cloudflare管理面板中的参数。我们必须要自己手动建立（这里是唯一的难点）。好在官方提供和的DNSSEC规范很有帮助。
+如何从Cloudflare的参数中构建DNSKEY RR记录 Cloudflare在DNSSEC面板中提供了很多值，但没有提供易于复制的DNSKEY RR记录。好在自行构建非常容易。打开文本编辑器稍加改造就可以使用了。
+首先，从Cloudflare复制DS Record值。 将IN DS替换为IN DNSKEY。 用Flags值（即257）替换指定为Key Tag的字符串后的数字（即2345）。 用3 13替换最后两个数字，例如13 2，因为3是DNSKEY记录中的固定值，而13是Cloudflare使用的官方算法。 用公共密钥字段的值替换最后一个长字符串。 现在通过改造，我们会得到一个类似于以下内容的记录：
+yourdomain.com. 3600 IN DNSKEY 257 3 13 oJB1W6WNGv&#43;ldv[...]eDQfsS3Ap3o= 然后把上面这些文本粘贴到INWX的DNSKEY RR字段中，因此它看起来像这样：
+单击SAVE按钮，就算大功告成了。不过这时候，Cloudflare还无法正确识别已配置的域名，这需要一点时间。我们可以沏一杯茶，边看新型冠状病毒的新闻，边等它生效了。">
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/styles.43002f6ce2899695ba7fe36aebb08b5955184df3db157e5f0d19aeb21c94d9606d6c52d4b30c7471c8e16b336f7318689d729b988fd414cc1ef1f2b3681e33e0.css" integrity="sha512-QwAvbOKJlpW6f&#43;Nq67CLWVUYTfPbFX5fDRmushyU2WBtbFLUswx0ccjhazNvcxhonXKbmI/UFMwe8fKzaB4z4A=="> 
+
+  
+   <link rel="stylesheet" href="http://localhost:1313/css/custom.css"> 
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥚</text></svg>" />
+
+  
+  
+  
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div id="header-post">
+  <a id="menu-icon" href="#">🥚</a>
+  <a id="menu-icon-tablet" href="#">🥚</a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">🏠主页</a></li>
+         
+        <li><a href="/posts">🗓归档</a></li>
+         
+        <li><a href="/about">🤔关于</a></li>
+         
+        <li><a href="/friend">🔗友链</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" http://localhost:1313/posts/20200129/" aria-label="Previous">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="http://localhost:1313/posts/20200202/" aria-label="Next">
+            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
+          </a>
+        </li>
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#" aria-label="Share">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇文章</span>
+      <span id="i-next" class="info" style="display:none;">下一篇文章</span>
+      <span id="i-top" class="info" style="display:none;">返回到顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享到外部</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="https://service.weibo.com/share/share.php?appkey=1881139527&title=INWX%e5%9f%9f%e5%90%8d%e5%a6%82%e4%bd%95%e8%ae%be%e7%bd%aeCloudFlare%e7%9a%84DNSSEC&url=http%3a%2f%2flocalhost%3a1313%2fposts%2f20200130%2f" aria-label="Weibo">
+      <i class="fab fa-weibo " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pan.baidu.com/share/qrcode?w=512&h=512&url=http%3a%2f%2flocalhost%3a1313%2fposts%2f20200130%2f" aria-label="WeChat">
+      <i class="fab fa-weixin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=http%3a%2f%2flocalhost%3a1313%2fposts%2f20200130%2f&text=INWX%e5%9f%9f%e5%90%8d%e5%a6%82%e4%bd%95%e8%ae%be%e7%bd%aeCloudFlare%e7%9a%84DNSSEC" aria-label="x-twitter">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http%3a%2f%2flocalhost%3a1313%2fposts%2f20200130%2f&is_video=false&description=INWX%e5%9f%9f%e5%90%8d%e5%a6%82%e4%bd%95%e8%ae%be%e7%bd%aeCloudFlare%e7%9a%84DNSSEC" aria-label="Pinterest">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=INWX%e5%9f%9f%e5%90%8d%e5%a6%82%e4%bd%95%e8%ae%be%e7%bd%aeCloudFlare%e7%9a%84DNSSEC&body=Check out this article: http%3a%2f%2flocalhost%3a1313%2fposts%2f20200130%2f" aria-label="Email">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+ </ul>
+
+    </div>
+    
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        INWX域名如何设置CloudFlare的DNSSEC
+      </h1>
+      <div class="meta">
+        
+        <div class="postdate">
+          
+          <time datetime="2020-01-30 08:00:00 &#43;0800 CST" itemprop="datePublished">2020-01-30</time>
+          
+        </div>
+        
+        
+        
+        
+      </div>
+    </header>
+
+  
+    
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#用cloudflare准备dnssec">用Cloudflare准备DNSSEC</a></li>
+        <li><a href="#在inwx站点上设置dnssec">在INWX站点上设置DNSSEC</a></li>
+        <li><a href="#如何从cloudflare的参数中构建dnskey-rr记录">如何从Cloudflare的参数中构建DNSKEY RR记录</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+    
+    <div class="content" itemprop="articleBody">
+      <p>我这个域名是在<a href="https://www.inwx.com/en" title="INWX">INWX</a>{:target=&quot;_blank&quot;}注册的，因为价格便宜。注册后发现，INWX的域名管理系统相当完善，不仅有强大的DNS管理系统、<del>免费的</del>SSL、Glue Records、Master/Slave DNS等，同样也支持DNSSEC。但是，当我尝试用CloudFlare提供的DNSSEC参数的时候，却发现INWX必须手动配置DNSSEC才行。</p>
+<p>因此，编写了这个简短的教程，希望能够帮助更多的人。</p>
+<h3 id="用cloudflare准备dnssec">用Cloudflare准备DNSSEC</h3>
+<p>首先第一步是要开启CloudFlare的DNSSEC，它就在DNS选项卡下面一点点的位置。找到DNSSEC之后，单击<code>Enable DNSSEC</code>开启DNSSEC。这时你将会看到有关DNSSEC配置的许多参数，Cloudflare要求我们将这些信息添加到域名注册平台中去。由于域名是在INWX注册的，所以接下来去INWX登录吧。</p>
+<h3 id="在inwx站点上设置dnssec">在INWX站点上设置DNSSEC</h3>
+<p>登录INWX后，在侧栏中搜索DNSSEC选项卡，然后在打开的页面上单击<code>Add DNSSEC</code>（页面右上角很小的一个按钮），这时会弹出一个窗口。在该弹出窗口中，首先填入你要添加DNSSEC的域名，然后取消选中<code>automatic modus</code>的复选框，这时将弹出两个附加字段。不要被名称迷惑了（CloudFlare和INWX的DS Record不是一回事），我们只需要填写第一个字段就可以了。</p>
+<p>不过，在INWX家的DNSKEY RR记录，并不能直接复制和粘贴使用Cloudflare管理面板中的参数。我们必须要自己手动建立（这里是唯一的难点）。好在官方提供和的DNSSEC规范很有帮助。</p>
+<h3 id="如何从cloudflare的参数中构建dnskey-rr记录">如何从Cloudflare的参数中构建DNSKEY RR记录</h3>
+<p>Cloudflare在DNSSEC面板中提供了很多值，但没有提供易于复制的DNSKEY RR记录。好在自行构建非常容易。打开文本编辑器稍加改造就可以使用了。</p>
+<ol>
+<li>首先，从Cloudflare复制DS Record值。</li>
+<li>将<code>IN DS</code>替换为<code>IN DNSKEY</code>。</li>
+<li>用<code>Flags</code>值（即257）替换指定为<code>Key Tag</code>的字符串后的数字（即2345）。</li>
+<li>用<code>3 13</code>替换最后两个数字，例如<code>13 2</code>，因为<code>3</code>是DNSKEY记录中的固定值，而<code>13</code>是Cloudflare使用的官方算法。</li>
+<li>用公共密钥字段的值替换最后一个长字符串。</li>
+</ol>
+<p>现在通过改造，我们会得到一个类似于以下内容的记录：</p>
+<pre><code>yourdomain.com. 3600 IN DNSKEY 257 3 13 oJB1W6WNGv+ldv[...]eDQfsS3Ap3o=
+</code></pre>
+<p>然后把上面这些文本粘贴到INWX的DNSKEY RR字段中，因此它看起来像这样：</p>
+<p><img src="https://db3.obs.cn-east-4.myhuaweicloud.com/album/20200130-1.jpg" alt=""></p>
+<p>单击<code>SAVE</code>按钮，就算大功告成了。不过这时候，Cloudflare还无法正确识别已配置的域名，这需要一点时间。我们可以沏一杯茶，边看新型冠状病毒的新闻，边等它生效了。</p>
+
+    </div>
+  </article>
+
+  
+  
+
+
+
+
+
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">🏠主页</a></li>
+         
+          <li><a href="/posts">🗓归档</a></li>
+         
+          <li><a href="/about">🤔关于</a></li>
+         
+          <li><a href="/friend">🔗友链</a></li>
+        
+      </ul>
+    </div>
+
+    
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="https://service.weibo.com/share/share.php?appkey=1881139527&title=INWX%e5%9f%9f%e5%90%8d%e5%a6%82%e4%bd%95%e8%ae%be%e7%bd%aeCloudFlare%e7%9a%84DNSSEC&url=http%3a%2f%2flocalhost%3a1313%2fposts%2f20200130%2f" aria-label="Weibo">
+      <i class="fab fa-weibo fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pan.baidu.com/share/qrcode?w=512&h=512&url=http%3a%2f%2flocalhost%3a1313%2fposts%2f20200130%2f" aria-label="WeChat">
+      <i class="fab fa-weixin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=http%3a%2f%2flocalhost%3a1313%2fposts%2f20200130%2f&text=INWX%e5%9f%9f%e5%90%8d%e5%a6%82%e4%bd%95%e8%ae%be%e7%bd%aeCloudFlare%e7%9a%84DNSSEC" aria-label="x-twitter">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http%3a%2f%2flocalhost%3a1313%2fposts%2f20200130%2f&is_video=false&description=INWX%e5%9f%9f%e5%90%8d%e5%a6%82%e4%bd%95%e8%ae%be%e7%bd%aeCloudFlare%e7%9a%84DNSSEC" aria-label="Pinterest">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=INWX%e5%9f%9f%e5%90%8d%e5%a6%82%e4%bd%95%e8%ae%be%e7%bd%aeCloudFlare%e7%9a%84DNSSEC&body=Check out this article: http%3a%2f%2flocalhost%3a1313%2fposts%2f20200130%2f" aria-label="Email">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+ </ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;" aria-label="Menu">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').toggle();return false;" aria-label="Share">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2025  穷光蛋博客 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">🏠主页</a></li>
+         
+        <li><a href="/posts">🗓归档</a></li>
+         
+        <li><a href="/about">🤔关于</a></li>
+         
+        <li><a href="/friend">🔗友链</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+
+<script src=/js/code-copy.js></script>
+
+
+
+
+</html>

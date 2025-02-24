@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> 现在博客使用的资源清单 | 穷光蛋博客🥚Qiong.me</title>
+  <link rel = 'canonical' href = 'http://localhost:1313/posts/20191208/'>
+  <meta name="description" content="有些人，你看见他整天都开心，率真得像个小孩，人人都羡慕他。其实，他就像向日葵，向着太阳的正面永远明媚，在照不到的背面将悲伤深藏。">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:url" content="http://localhost:1313/posts/20191208/">
+  <meta property="og:site_name" content="穷光蛋博客">
+  <meta property="og:title" content="现在博客使用的资源清单">
+  <meta property="og:description" content="个人博客嘛，顾名思义就是咱们自娱自乐的地方。博客的起源也是一群暴露狂不甘于让日记仅供自己参考、要让更多人和自己一起相互闻臭袜子的行为，所以注定了想要拿个人博客赚钱，那几乎是不太现实的。说得再惨一点，能有个收支平衡，就已经不错了。君不见多少博客悲白发，一年到都域名钱都赚不回来（这是是说我自己啦）。既然博客不能赚钱，那么只能采用收支缩紧策略了。网络上不是有那么多免费资源吗？不用白不用啊。于是就有了这样一篇《现在博客使用的资源清单》仅供大家参考。
+域名及DNS服务 先说域名吧，因为这是别人找到你的门牌号。不论房屋好坏与否，起码得能先让人知道你家在哪里才可以，所以域名极为关键。这里我选择付费（免费域名都是坑），把piezhan.com存放到阿里云了。一方面阿里云的功能比较完善，像域名隐私保护都会免费提供，还有进阶功能在后面会补充说明；另一方面，通过阿里云APP可以用支付宝花呗给域名续费，省了很多事，不怕忘记日期导致欠费，也不怕欠费那几天囊中羞涩了。
+说完域名，再说一说DNS，这决定了域名可以发挥到多大的使用价值。我选择了Vultr提供的DNS服务{:target=&#34;_blank&#34;}。其实网上好的DNS服务商不计其数，但是我想要的有点多——要支持Anycast、要支持DNSSEC、还要支持CAA解析，最关键的是要免费。找来找去我发现Vultr的DNS解析服务挺适合我的，还免费赠送Vanity nameservers，完美~
+博客主机空间及SSL 由于使用的是Jekyll静态博客，所以对空间的要求并不多，能跑html就行，但要能多稳定就多稳定。思来想去，随后还是放倒了coding{:target=&#34;_blank&#34;}上。因为：1、免费；2、可以自动解析Jekyll程序，不用电脑本地部署，和之前我用的bitcron类似，我只负责写文字，coding负责帮我渲染。此外，Coding还支持自动申请并续期Let’s Encrypt证书。省事~
+图床及CDN加速 本着能省就省的原则，图床肯定也是要找免费的。找了很多网上的教程和参考意见之后，我选择Github&#43;JsDelivr这种选择。Github当图床的教程，网上一抓一大把，而且Github也很稳定（就是有点慢），jsDelivr是一个免费开源的CDN解决方案，最关键的是，它居然有中国大陆的节点（走的是网宿），极大地缓解了Github的速度问题。具体使用教程，大家可以看这篇文章——《GitHub&#43;jsDelivr&#43;PicGo搭建免费图床{:target=&#34;_blank&#34;}》。
+其它边边角角的清单 域名邮箱，用的是QQ域名邮箱，对，我连免费企业邮局都没开。
+站内的URL短网址，用的是Short.cm{:target=&#34;_blank&#34;}的服务，免费可用1000条Brand Link解析，无广告，这就足以了。
+以上就是我的博客清单了。算下来，目前也就域名花点钱，别的都还好，节省出不小的开支。另外，拿充满了私人味道的博客去换钞票，多少点坐台的感觉。感觉就是让别人在嫖字节的思想和灵魂。">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2019-12-08T08:00:00+08:00">
+    <meta property="article:modified_time" content="2019-12-08T08:00:00+08:00">
+
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="现在博客使用的资源清单">
+  <meta name="twitter:description" content="个人博客嘛，顾名思义就是咱们自娱自乐的地方。博客的起源也是一群暴露狂不甘于让日记仅供自己参考、要让更多人和自己一起相互闻臭袜子的行为，所以注定了想要拿个人博客赚钱，那几乎是不太现实的。说得再惨一点，能有个收支平衡，就已经不错了。君不见多少博客悲白发，一年到都域名钱都赚不回来（这是是说我自己啦）。既然博客不能赚钱，那么只能采用收支缩紧策略了。网络上不是有那么多免费资源吗？不用白不用啊。于是就有了这样一篇《现在博客使用的资源清单》仅供大家参考。
+域名及DNS服务 先说域名吧，因为这是别人找到你的门牌号。不论房屋好坏与否，起码得能先让人知道你家在哪里才可以，所以域名极为关键。这里我选择付费（免费域名都是坑），把piezhan.com存放到阿里云了。一方面阿里云的功能比较完善，像域名隐私保护都会免费提供，还有进阶功能在后面会补充说明；另一方面，通过阿里云APP可以用支付宝花呗给域名续费，省了很多事，不怕忘记日期导致欠费，也不怕欠费那几天囊中羞涩了。
+说完域名，再说一说DNS，这决定了域名可以发挥到多大的使用价值。我选择了Vultr提供的DNS服务{:target=&#34;_blank&#34;}。其实网上好的DNS服务商不计其数，但是我想要的有点多——要支持Anycast、要支持DNSSEC、还要支持CAA解析，最关键的是要免费。找来找去我发现Vultr的DNS解析服务挺适合我的，还免费赠送Vanity nameservers，完美~
+博客主机空间及SSL 由于使用的是Jekyll静态博客，所以对空间的要求并不多，能跑html就行，但要能多稳定就多稳定。思来想去，随后还是放倒了coding{:target=&#34;_blank&#34;}上。因为：1、免费；2、可以自动解析Jekyll程序，不用电脑本地部署，和之前我用的bitcron类似，我只负责写文字，coding负责帮我渲染。此外，Coding还支持自动申请并续期Let’s Encrypt证书。省事~
+图床及CDN加速 本着能省就省的原则，图床肯定也是要找免费的。找了很多网上的教程和参考意见之后，我选择Github&#43;JsDelivr这种选择。Github当图床的教程，网上一抓一大把，而且Github也很稳定（就是有点慢），jsDelivr是一个免费开源的CDN解决方案，最关键的是，它居然有中国大陆的节点（走的是网宿），极大地缓解了Github的速度问题。具体使用教程，大家可以看这篇文章——《GitHub&#43;jsDelivr&#43;PicGo搭建免费图床{:target=&#34;_blank&#34;}》。
+其它边边角角的清单 域名邮箱，用的是QQ域名邮箱，对，我连免费企业邮局都没开。
+站内的URL短网址，用的是Short.cm{:target=&#34;_blank&#34;}的服务，免费可用1000条Brand Link解析，无广告，这就足以了。
+以上就是我的博客清单了。算下来，目前也就域名花点钱，别的都还好，节省出不小的开支。另外，拿充满了私人味道的博客去换钞票，多少点坐台的感觉。感觉就是让别人在嫖字节的思想和灵魂。">
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/styles.43002f6ce2899695ba7fe36aebb08b5955184df3db157e5f0d19aeb21c94d9606d6c52d4b30c7471c8e16b336f7318689d729b988fd414cc1ef1f2b3681e33e0.css" integrity="sha512-QwAvbOKJlpW6f&#43;Nq67CLWVUYTfPbFX5fDRmushyU2WBtbFLUswx0ccjhazNvcxhonXKbmI/UFMwe8fKzaB4z4A=="> 
+
+  
+   <link rel="stylesheet" href="http://localhost:1313/css/custom.css"> 
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥚</text></svg>" />
+
+  
+  
+  
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div id="header-post">
+  <a id="menu-icon" href="#">🥚</a>
+  <a id="menu-icon-tablet" href="#">🥚</a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">🏠主页</a></li>
+         
+        <li><a href="/posts">🗓归档</a></li>
+         
+        <li><a href="/about">🤔关于</a></li>
+         
+        <li><a href="/friend">🔗友链</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" http://localhost:1313/posts/20191201/" aria-label="Previous">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="http://localhost:1313/posts/20191209/" aria-label="Next">
+            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
+          </a>
+        </li>
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#" aria-label="Share">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇文章</span>
+      <span id="i-next" class="info" style="display:none;">下一篇文章</span>
+      <span id="i-top" class="info" style="display:none;">返回到顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享到外部</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="https://service.weibo.com/share/share.php?appkey=1881139527&title=%e7%8e%b0%e5%9c%a8%e5%8d%9a%e5%ae%a2%e4%bd%bf%e7%94%a8%e7%9a%84%e8%b5%84%e6%ba%90%e6%b8%85%e5%8d%95&url=http%3a%2f%2flocalhost%3a1313%2fposts%2f20191208%2f" aria-label="Weibo">
+      <i class="fab fa-weibo " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pan.baidu.com/share/qrcode?w=512&h=512&url=http%3a%2f%2flocalhost%3a1313%2fposts%2f20191208%2f" aria-label="WeChat">
+      <i class="fab fa-weixin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=http%3a%2f%2flocalhost%3a1313%2fposts%2f20191208%2f&text=%e7%8e%b0%e5%9c%a8%e5%8d%9a%e5%ae%a2%e4%bd%bf%e7%94%a8%e7%9a%84%e8%b5%84%e6%ba%90%e6%b8%85%e5%8d%95" aria-label="x-twitter">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http%3a%2f%2flocalhost%3a1313%2fposts%2f20191208%2f&is_video=false&description=%e7%8e%b0%e5%9c%a8%e5%8d%9a%e5%ae%a2%e4%bd%bf%e7%94%a8%e7%9a%84%e8%b5%84%e6%ba%90%e6%b8%85%e5%8d%95" aria-label="Pinterest">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=%e7%8e%b0%e5%9c%a8%e5%8d%9a%e5%ae%a2%e4%bd%bf%e7%94%a8%e7%9a%84%e8%b5%84%e6%ba%90%e6%b8%85%e5%8d%95&body=Check out this article: http%3a%2f%2flocalhost%3a1313%2fposts%2f20191208%2f" aria-label="Email">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+ </ul>
+
+    </div>
+    
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        现在博客使用的资源清单
+      </h1>
+      <div class="meta">
+        
+        <div class="postdate">
+          
+          <time datetime="2019-12-08 08:00:00 &#43;0800 CST" itemprop="datePublished">2019-12-08</time>
+          
+        </div>
+        
+        
+        
+        
+      </div>
+    </header>
+
+  
+    
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#域名及dns服务">域名及DNS服务</a></li>
+        <li><a href="#博客主机空间及ssl">博客主机空间及SSL</a></li>
+        <li><a href="#图床及cdn加速">图床及CDN加速</a></li>
+        <li><a href="#其它边边角角的清单">其它边边角角的清单</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+    
+    <div class="content" itemprop="articleBody">
+      <p>个人博客嘛，顾名思义就是咱们自娱自乐的地方。博客的起源也是一群暴露狂不甘于让日记仅供自己参考、要让更多人和自己一起相互闻臭袜子的行为，所以注定了想要拿个人博客赚钱，那几乎是不太现实的。说得再惨一点，能有个收支平衡，就已经不错了。君不见多少博客悲白发，一年到都域名钱都赚不回来（这是是说我自己啦）。既然博客不能赚钱，那么只能采用收支缩紧策略了。网络上不是有那么多免费资源吗？不用白不用啊。于是就有了这样一篇《现在博客使用的资源清单》仅供大家参考。</p>
+<h3 id="域名及dns服务">域名及DNS服务</h3>
+<p>先说域名吧，因为这是别人找到你的门牌号。不论房屋好坏与否，起码得能先让人知道你家在哪里才可以，所以域名极为关键。这里我选择付费（免费域名都是坑），把<code>piezhan.com</code>存放到阿里云了。一方面阿里云的功能比较完善，像域名隐私保护都会免费提供，还有进阶功能在后面会补充说明；另一方面，通过阿里云APP可以用支付宝花呗给域名续费，省了很多事，不怕忘记日期导致欠费，也不怕欠费那几天囊中羞涩了。</p>
+<p>说完域名，再说一说DNS，这决定了域名可以发挥到多大的使用价值。我选择了<a href="https://www.vultr.com/docs/introduction-to-vultr-dns">Vultr提供的DNS服务</a>{:target=&quot;_blank&quot;}。其实网上好的DNS服务商不计其数，但是我想要的有点多——要支持Anycast、要支持DNSSEC、还要支持CAA解析，最关键的是要免费。找来找去我发现Vultr的DNS解析服务挺适合我的，还免费赠送Vanity nameservers，完美~</p>
+<h3 id="博客主机空间及ssl">博客主机空间及SSL</h3>
+<p>由于使用的是Jekyll静态博客，所以对空间的要求并不多，能跑html就行，但要能多稳定就多稳定。思来想去，随后还是放倒了<a href="https://e.coding.net/signin?from=net&amp;_ga=2.267032968.741301815.1575776047-1302532984.1571546013">coding</a>{:target=&quot;_blank&quot;}上。因为：1、免费；2、可以自动解析Jekyll程序，不用电脑本地部署，和之前我用的bitcron类似，我只负责写文字，coding负责帮我渲染。此外，Coding还支持自动申请并续期Let&rsquo;s Encrypt证书。省事~</p>
+<h3 id="图床及cdn加速">图床及CDN加速</h3>
+<p>本着能省就省的原则，图床肯定也是要找免费的。找了很多网上的教程和参考意见之后，我选择Github+JsDelivr这种选择。Github当图床的教程，网上一抓一大把，而且Github也很稳定（就是有点慢），jsDelivr是一个免费开源的CDN解决方案，最关键的是，它居然有中国大陆的节点（走的是网宿），极大地缓解了Github的速度问题。具体使用教程，大家可以看这篇文章——《<a href="https://segmentfault.com/a/1190000020240864">GitHub+jsDelivr+PicGo搭建免费图床</a>{:target=&quot;_blank&quot;}》。</p>
+<h3 id="其它边边角角的清单">其它边边角角的清单</h3>
+<p>域名邮箱，用的是QQ域名邮箱，对，我连免费企业邮局都没开。</p>
+<p>站内的URL短网址，用的是<a href="https://short.cm/pricing">Short.cm</a>{:target=&quot;_blank&quot;}的服务，免费可用1000条Brand Link解析，无广告，这就足以了。</p>
+<p>以上就是我的博客清单了。算下来，目前也就域名花点钱，别的都还好，节省出不小的开支。另外，拿充满了私人味道的博客去换钞票，多少点坐台的感觉。感觉就是让别人在嫖字节的思想和灵魂。</p>
+
+    </div>
+  </article>
+
+  
+  
+
+
+
+
+
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">🏠主页</a></li>
+         
+          <li><a href="/posts">🗓归档</a></li>
+         
+          <li><a href="/about">🤔关于</a></li>
+         
+          <li><a href="/friend">🔗友链</a></li>
+        
+      </ul>
+    </div>
+
+    
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="https://service.weibo.com/share/share.php?appkey=1881139527&title=%e7%8e%b0%e5%9c%a8%e5%8d%9a%e5%ae%a2%e4%bd%bf%e7%94%a8%e7%9a%84%e8%b5%84%e6%ba%90%e6%b8%85%e5%8d%95&url=http%3a%2f%2flocalhost%3a1313%2fposts%2f20191208%2f" aria-label="Weibo">
+      <i class="fab fa-weibo fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pan.baidu.com/share/qrcode?w=512&h=512&url=http%3a%2f%2flocalhost%3a1313%2fposts%2f20191208%2f" aria-label="WeChat">
+      <i class="fab fa-weixin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=http%3a%2f%2flocalhost%3a1313%2fposts%2f20191208%2f&text=%e7%8e%b0%e5%9c%a8%e5%8d%9a%e5%ae%a2%e4%bd%bf%e7%94%a8%e7%9a%84%e8%b5%84%e6%ba%90%e6%b8%85%e5%8d%95" aria-label="x-twitter">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http%3a%2f%2flocalhost%3a1313%2fposts%2f20191208%2f&is_video=false&description=%e7%8e%b0%e5%9c%a8%e5%8d%9a%e5%ae%a2%e4%bd%bf%e7%94%a8%e7%9a%84%e8%b5%84%e6%ba%90%e6%b8%85%e5%8d%95" aria-label="Pinterest">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=%e7%8e%b0%e5%9c%a8%e5%8d%9a%e5%ae%a2%e4%bd%bf%e7%94%a8%e7%9a%84%e8%b5%84%e6%ba%90%e6%b8%85%e5%8d%95&body=Check out this article: http%3a%2f%2flocalhost%3a1313%2fposts%2f20191208%2f" aria-label="Email">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+ </ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;" aria-label="Menu">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').toggle();return false;" aria-label="Share">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2025  穷光蛋博客 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">🏠主页</a></li>
+         
+        <li><a href="/posts">🗓归档</a></li>
+         
+        <li><a href="/about">🤔关于</a></li>
+         
+        <li><a href="/friend">🔗友链</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+
+<script src=/js/code-copy.js></script>
+
+
+
+
+</html>

@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> HTML lang没想象中的那么简单 | 穷光蛋博客🥚Qiong.me</title>
+  <link rel = 'canonical' href = 'http://localhost:1313/posts/20201115/'>
+  <meta name="description" content="有些人，你看见他整天都开心，率真得像个小孩，人人都羡慕他。其实，他就像向日葵，向着太阳的正面永远明媚，在照不到的背面将悲伤深藏。">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:url" content="http://localhost:1313/posts/20201115/">
+  <meta property="og:site_name" content="穷光蛋博客">
+  <meta property="og:title" content="HTML lang没想象中的那么简单">
+  <meta property="og:description" content="前言 今天心血来潮，想试试看自己的博客页面是否符合W3C标准。结果这一检测，上来就提示我说——&lt;html lang=&#34;zh-CN&#34;&gt;不符合标准。 What???? 大家给 &lt;html&gt; 设置 lang 属性的时候，不都是写&lt;html lang=&#34;zh-CN&#34;&gt;，或者干脆直接简写成 &lt;html lang=&#34;zh&#34;&gt; 吗？这咋还不符合标准规范了？但仔细想一想，好像是有些问题。
+首先，zh 是什么鬼？拼音？明明是国际标准怎么会用中文拼音？其次，CN 为什么要大写？第三，zh-CN表示中国中文，zh-SG表示新加坡中文，但这两个国家都使用简体中文，貌似没什么区别呀？第四，如果页面上显示的是用中文是一个粤语用词，如佢系一个须刨嚟嘅（它是一个刮胡刀），那屏幕阅读器是用普通话朗读还是用粤语朗读呢？
+带着这些问题，以及如何才能符合W3C标准规范，我决定开始了解下语言标记是如何定义的。
+过程 先从lang属性的定义开始。参考MDN上关于 lang{:target=&#34;_blank&#34;} 上的解释可知，它是由 IETF{:target=&#34;_blank&#34;} 的 BCP47 规范来定义的。根据 BCP47{:target=&#34;_blank&#34;} 规范的描述，它是 RFC5646 与 RFC4647{:target=&#34;_blank&#34;} 这两个规范的最佳实践合集，用于取代 RFC4646{:target=&#34;_blank&#34;}、RFC3066{:target=&#34;_blank&#34;}{:target=&#34;_blank&#34;}、RFC1766{:target=&#34;_blank&#34;} 这三个旧的语言标签规范。最新的规范定义了语言标签的描述规则如下：
+language - extlang - script - region - variant - extension - privateuse 主语言 - 扩展语言(方言) - 书写文字 - 区域 - 变体 - 扩展 - 私有 由子标签按顺序通过连字号(-)连接起来组成一个完整的语言标签，各子标签的格式遵循以下标准：
+language：ISO639-1{:target=&#34;_blank&#34;} (2002)的2字母语言代码，ISO639-2{:target=&#34;_blank&#34;} (1998) 或 ISO639-3 (2007) 或 ISO639-5{:target=&#34;_blank&#34;} (2008)的3字母语言代码 extlang：ISO639-3{:target=&#34;_blank&#34;} 每个由3字母组成 script：ISO15924{:target=&#34;_blank&#34;} 的4字母书写文字代码 region：ISO3166-1_alpha-2{:target=&#34;_blank&#34;} 的2字母地区代码（通常大写），或UNM.49{:target=&#34;_blank&#34;}的3数字地理区代码 variant：IANA语言子标签注册表{:target=&#34;_blank&#34;} 每个为5至8个字母，或者4字母后跟1个数字 extension：暂时未知 privateuse：暂时未知 看完上面的解释介绍，估计大家的内心基本都是这样的→ 😒😖🥴😵。这才刚开始讲，就遇到了一堆的专有名称，一堆的国际规范，用一个字形容我此刻的心情——懵！">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2020-11-15T17:18:00+08:00">
+    <meta property="article:modified_time" content="2020-11-15T17:18:00+08:00">
+
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="HTML lang没想象中的那么简单">
+  <meta name="twitter:description" content="前言 今天心血来潮，想试试看自己的博客页面是否符合W3C标准。结果这一检测，上来就提示我说——&lt;html lang=&#34;zh-CN&#34;&gt;不符合标准。 What???? 大家给 &lt;html&gt; 设置 lang 属性的时候，不都是写&lt;html lang=&#34;zh-CN&#34;&gt;，或者干脆直接简写成 &lt;html lang=&#34;zh&#34;&gt; 吗？这咋还不符合标准规范了？但仔细想一想，好像是有些问题。
+首先，zh 是什么鬼？拼音？明明是国际标准怎么会用中文拼音？其次，CN 为什么要大写？第三，zh-CN表示中国中文，zh-SG表示新加坡中文，但这两个国家都使用简体中文，貌似没什么区别呀？第四，如果页面上显示的是用中文是一个粤语用词，如佢系一个须刨嚟嘅（它是一个刮胡刀），那屏幕阅读器是用普通话朗读还是用粤语朗读呢？
+带着这些问题，以及如何才能符合W3C标准规范，我决定开始了解下语言标记是如何定义的。
+过程 先从lang属性的定义开始。参考MDN上关于 lang{:target=&#34;_blank&#34;} 上的解释可知，它是由 IETF{:target=&#34;_blank&#34;} 的 BCP47 规范来定义的。根据 BCP47{:target=&#34;_blank&#34;} 规范的描述，它是 RFC5646 与 RFC4647{:target=&#34;_blank&#34;} 这两个规范的最佳实践合集，用于取代 RFC4646{:target=&#34;_blank&#34;}、RFC3066{:target=&#34;_blank&#34;}{:target=&#34;_blank&#34;}、RFC1766{:target=&#34;_blank&#34;} 这三个旧的语言标签规范。最新的规范定义了语言标签的描述规则如下：
+language - extlang - script - region - variant - extension - privateuse 主语言 - 扩展语言(方言) - 书写文字 - 区域 - 变体 - 扩展 - 私有 由子标签按顺序通过连字号(-)连接起来组成一个完整的语言标签，各子标签的格式遵循以下标准：
+language：ISO639-1{:target=&#34;_blank&#34;} (2002)的2字母语言代码，ISO639-2{:target=&#34;_blank&#34;} (1998) 或 ISO639-3 (2007) 或 ISO639-5{:target=&#34;_blank&#34;} (2008)的3字母语言代码 extlang：ISO639-3{:target=&#34;_blank&#34;} 每个由3字母组成 script：ISO15924{:target=&#34;_blank&#34;} 的4字母书写文字代码 region：ISO3166-1_alpha-2{:target=&#34;_blank&#34;} 的2字母地区代码（通常大写），或UNM.49{:target=&#34;_blank&#34;}的3数字地理区代码 variant：IANA语言子标签注册表{:target=&#34;_blank&#34;} 每个为5至8个字母，或者4字母后跟1个数字 extension：暂时未知 privateuse：暂时未知 看完上面的解释介绍，估计大家的内心基本都是这样的→ 😒😖🥴😵。这才刚开始讲，就遇到了一堆的专有名称，一堆的国际规范，用一个字形容我此刻的心情——懵！">
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/styles.43002f6ce2899695ba7fe36aebb08b5955184df3db157e5f0d19aeb21c94d9606d6c52d4b30c7471c8e16b336f7318689d729b988fd414cc1ef1f2b3681e33e0.css" integrity="sha512-QwAvbOKJlpW6f&#43;Nq67CLWVUYTfPbFX5fDRmushyU2WBtbFLUswx0ccjhazNvcxhonXKbmI/UFMwe8fKzaB4z4A=="> 
+
+  
+   <link rel="stylesheet" href="http://localhost:1313/css/custom.css"> 
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥚</text></svg>" />
+
+  
+  
+  
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div id="header-post">
+  <a id="menu-icon" href="#">🥚</a>
+  <a id="menu-icon-tablet" href="#">🥚</a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">🏠主页</a></li>
+         
+        <li><a href="/posts">🗓归档</a></li>
+         
+        <li><a href="/about">🤔关于</a></li>
+         
+        <li><a href="/friend">🔗友链</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" http://localhost:1313/posts/20201114/" aria-label="Previous">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="http://localhost:1313/posts/20201120/" aria-label="Next">
+            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
+          </a>
+        </li>
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#" aria-label="Share">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇文章</span>
+      <span id="i-next" class="info" style="display:none;">下一篇文章</span>
+      <span id="i-top" class="info" style="display:none;">返回到顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享到外部</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="https://service.weibo.com/share/share.php?appkey=1881139527&title=HTML%20lang%e6%b2%a1%e6%83%b3%e8%b1%a1%e4%b8%ad%e7%9a%84%e9%82%a3%e4%b9%88%e7%ae%80%e5%8d%95&url=http%3a%2f%2flocalhost%3a1313%2fposts%2f20201115%2f" aria-label="Weibo">
+      <i class="fab fa-weibo " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pan.baidu.com/share/qrcode?w=512&h=512&url=http%3a%2f%2flocalhost%3a1313%2fposts%2f20201115%2f" aria-label="WeChat">
+      <i class="fab fa-weixin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=http%3a%2f%2flocalhost%3a1313%2fposts%2f20201115%2f&text=HTML%20lang%e6%b2%a1%e6%83%b3%e8%b1%a1%e4%b8%ad%e7%9a%84%e9%82%a3%e4%b9%88%e7%ae%80%e5%8d%95" aria-label="x-twitter">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http%3a%2f%2flocalhost%3a1313%2fposts%2f20201115%2f&is_video=false&description=HTML%20lang%e6%b2%a1%e6%83%b3%e8%b1%a1%e4%b8%ad%e7%9a%84%e9%82%a3%e4%b9%88%e7%ae%80%e5%8d%95" aria-label="Pinterest">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=HTML%20lang%e6%b2%a1%e6%83%b3%e8%b1%a1%e4%b8%ad%e7%9a%84%e9%82%a3%e4%b9%88%e7%ae%80%e5%8d%95&body=Check out this article: http%3a%2f%2flocalhost%3a1313%2fposts%2f20201115%2f" aria-label="Email">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+ </ul>
+
+    </div>
+    
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        HTML lang没想象中的那么简单
+      </h1>
+      <div class="meta">
+        
+        <div class="postdate">
+          
+          <time datetime="2020-11-15 17:18:00 &#43;0800 CST" itemprop="datePublished">2020-11-15</time>
+          
+        </div>
+        
+        
+        
+        
+      </div>
+    </header>
+
+  
+    
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#前言">前言</a></li>
+        <li><a href="#过程">过程</a></li>
+        <li><a href="#历史">历史</a></li>
+        <li><a href="#iana-语言子标签注册表">IANA 语言子标签注册表</a></li>
+        <li><a href="#中文子标签一览">中文子标签一览</a></li>
+        <li><a href="#script">script</a></li>
+        <li><a href="#region">region</a></li>
+        <li><a href="#正确的写法">正确的写法</a></li>
+        <li><a href="#语言标签解释">语言标签解释</a></li>
+        <li><a href="#资料参考">资料参考</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+    
+    <div class="content" itemprop="articleBody">
+      <h3 id="前言">前言</h3>
+<p>今天心血来潮，想试试看自己的博客页面是否符合W3C标准。结果这一检测，上来就提示我说——<code>&lt;html lang=&quot;zh-CN&quot;&gt;</code>不符合标准。
+<em><strong>What????</strong></em>
+大家给 <code>&lt;html&gt;</code> 设置 <code>lang</code> 属性的时候，不都是写<code>&lt;html lang=&quot;zh-CN&quot;&gt;</code>，或者干脆直接简写成 <code>&lt;html lang=&quot;zh&quot;&gt;</code> 吗？这咋还不符合标准规范了？但仔细想一想，好像是有些问题。</p>
+<p>首先，<code>zh</code> 是什么鬼？拼音？明明是国际标准怎么会用中文拼音？其次，<code>CN</code> 为什么要大写？第三，<code>zh-CN</code>表示中国中文，<code>zh-SG</code>表示新加坡中文，但这两个国家都使用简体中文，貌似没什么区别呀？第四，如果页面上显示的是用中文是一个粤语用词，如<code>佢系一个须刨嚟嘅</code>（它是一个刮胡刀），那屏幕阅读器是用普通话朗读还是用粤语朗读呢？</p>
+<p>带着这些问题，以及如何才能符合W3C标准规范，我决定开始了解下语言标记是如何定义的。</p>
+<h3 id="过程">过程</h3>
+<p>先从<code>lang</code>属性的定义开始。参考MDN上关于 <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Global_attributes/lang" title="lang">lang</a>{:target=&quot;_blank&quot;} 上的解释可知，它是由 <a href="https://zh.wikipedia.org/wiki/%E4%BA%92%E8%81%94%E7%BD%91%E5%B7%A5%E7%A8%8B%E4%BB%BB%E5%8A%A1%E7%BB%84" title="IETF">IETF</a>{:target=&quot;_blank&quot;} 的 <a href="https://www.ietf.org/rfc/bcp/bcp47.txt" title="BCP47">BCP47</a> 规范来定义的。根据 <a href="https://www.ietf.org/rfc/bcp/bcp47.txt" title="BCP47">BCP47</a>{:target=&quot;_blank&quot;} 规范的描述，它是 <a href="https://tools.ietf.org/rfc/rfc5646.txt" title="RFC5646">RFC5646</a> 与 <a href="https://tools.ietf.org/rfc/rfc4647.txt" title="RFC4647">RFC4647</a>{:target=&quot;_blank&quot;} 这两个规范的最佳实践合集，用于取代 <a href="https://tools.ietf.org/rfc/rfc4646.txt" title="RFC4646">RFC4646</a>{:target=&quot;_blank&quot;}、<a href="https://tools.ietf.org/rfc/rfc3066.txt" title="RFC3066">RFC3066</a>{:target=&quot;_blank&quot;}{:target=&quot;_blank&quot;}、<a href="https://tools.ietf.org/rfc/rfc1766.txt" title="RFC1766">RFC1766</a>{:target=&quot;_blank&quot;} 这三个旧的语言标签规范。最新的规范定义了语言标签的描述规则如下：</p>
+<pre><code>language  -  extlang       -  script  -  region  -  variant  -  extension  -  privateuse
+主语言     -  扩展语言(方言)  -  书写文字  -  区域    -  变体      -  扩展       -  私有
+</code></pre>
+<p>由子标签按顺序通过连字号(-)连接起来组成一个完整的语言标签，各子标签的格式遵循以下标准：</p>
+<ul>
+<li>language：<a href="http://www.mathguide.de/info/tools/languagecode.html" title="ISO639-1">ISO639-1</a>{:target=&quot;_blank&quot;} (2002)的2字母语言代码，<a href="https://www.loc.gov/standards/iso639-2/php/code_list.php" title="ISO639-2">ISO639-2</a>{:target=&quot;_blank&quot;} (1998) 或 <a href="https://iso639-3.sil.org/code_tables/639/data" title="ISO639-3">ISO639-3</a> (2007) 或 <a href="https://www.loc.gov/standards/iso639-5/id.php" title="ISO639-5">ISO639-5</a>{:target=&quot;_blank&quot;} (2008)的3字母语言代码</li>
+<li>extlang：<a href="https://iso639-3.sil.org/code_tables/639/data" title="ISO639-3">ISO639-3</a>{:target=&quot;_blank&quot;} 每个由3字母组成</li>
+<li>script：<a href="https://www.unicode.org/iso15924/iso15924-codes.html" title="ISO15924">ISO15924</a>{:target=&quot;_blank&quot;} 的4字母书写文字代码</li>
+<li>region：<a href="https://zh.wikipedia.org/wiki/ISO_3166-1%E4%BA%8C%E4%BD%8D%E5%AD%97%E6%AF%8D%E4%BB%A3%E7%A0%81" title="ISO3166-1_alpha-2">ISO3166-1_alpha-2</a>{:target=&quot;_blank&quot;} 的2字母地区代码（通常大写），或<a href="https://zh.wikipedia.org/wiki/UN_M.49" title="UNM.49">UNM.49</a>{:target=&quot;_blank&quot;}的3数字地理区代码</li>
+<li>variant：<a href="https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry" title="IANA语言子标签注册表">IANA语言子标签注册表</a>{:target=&quot;_blank&quot;} 每个为5至8个字母，或者4字母后跟1个数字</li>
+<li>extension：暂时未知</li>
+<li>privateuse：暂时未知</li>
+</ul>
+<p>看完上面的解释介绍，估计大家的内心基本都是这样的→ 😒😖🥴😵。这才刚开始讲，就遇到了一堆的专有名称，一堆的国际规范，用一个字形容我此刻的心情——<strong>懵</strong>！</p>
+<p>对新规范的解读先暂停一下，我们还是先回过头从<code>zh-CN</code>的历史开始讲起吧。</p>
+<h3 id="历史">历史</h3>
+<p>1995年3月 IETF（互联网工程任务组）发布了最早的 <a href="https://tools.ietf.org/rfc/rfc1766.txt" title="RFC1766">RFC1766</a>{:target=&quot;_blank&quot;} 语言标签规范。这套规范使用 <a href="http://www.mathguide.de/info/tools/languagecode.html" title="ISO639-1">ISO639-1</a>{:target=&quot;_blank&quot;} 的2字母语言代码，<a href="http://www.mathguide.de/info/tools/languagecode.html" title="ISO3166-1_alpha-2">ISO3166-1_alpha-2</a>{:target=&quot;_blank&quot;} 的2字母国家地区代码并约定大写。<a href="http://www.mathguide.de/info/tools/languagecode.html" title="ISO639-1">ISO639-1</a>{:target=&quot;_blank&quot;} 规范中汉语使用<code>zh</code>表示，来自“中文”的汉语拼音：<code>Zhōngwén</code>。<a href="https://zh.wikipedia.org/wiki/ISO_3166-1%E4%BA%8C%E4%BD%8D%E5%AD%97%E6%AF%8D%E4%BB%A3%E7%A0%81" title="ISO3166-1_alpha-2">ISO3166-1_alpha-2</a>{:target=&quot;_blank&quot;} 规范中中国的代码是<code>CN</code>，这大概就是<code>zh-CN</code>的由来，也是目前使用最普遍的一种中文语言标签。</p>
+<p>2001年1月发布的 <a href="https://tools.ietf.org/rfc/rfc3066.txt" title="RFC3066">RFC3066</a>{:target=&quot;_blank&quot;} 语言标签规范，使用 <a href="https://iso639-3.sil.org/code_tables/639/data" title="ISO639-2">ISO639-2</a>{:target=&quot;_blank&quot;} 的3字母语言代码，汉语用<code>zho</code>表示，同样来自“中文”的汉语拼音 <code>Zhōngwén</code>的前3个字母。</p>
+<p>2006年9月发布 <a href="https://iso639-3.sil.org/code_tables/639/data" title="RFC4646">RFC4646</a>{:target=&quot;_blank&quot;}（规范的主体）与 <a href="https://tools.ietf.org/rfc/rfc4647.txt" title="RFC4647">RFC4647</a>（处理匹配行为）语言标签规范。 <a href="https://tools.ietf.org/rfc/rfc4646.txt" title="RFC4646">RFC4646</a>{:target=&quot;_blank&quot;} 增加了使用 <a href="https://www.unicode.org/iso15924/iso15924-codes.html" title="ISO15924">ISO15924</a>{:target=&quot;_blank&quot;} 的4字母书写文字子标签，简体中文是<code>Hans</code>，繁体中文是<code>Hant</code>，以及 <a href="https://zh.wikipedia.org/wiki/UN_M.49" title="UNM.49">UNM.49</a>{:target=&quot;_blank&quot;} 的3数字地理分区码。</p>
+<p>2009年9月发布 <a href="https://tools.ietf.org/rfc/rfc5646.txt" title="RFC5646">RFC5646</a>{:target=&quot;_blank&quot;}，引入了3字符码的 <a href="https://iso639-3.sil.org/code_tables/639/data" title="ISO639-3">ISO639-3</a>{:target=&quot;_blank&quot;} 与 <a href="https://www.loc.gov/standards/iso639-5/id.php" title="ISO639-5">ISO639-5</a>{:target=&quot;_blank&quot;} 作为语言子标签。其中，<a href="https://iso639-3.sil.org/code_tables/639/data" title="ISO639-3">ISO639-3</a>{:target=&quot;_blank&quot;} 认定汉语文（<code>zho</code>）是一个大语文（macrolanguage），包含14种语文：<code>cdo</code> – 闽东语，<code>cjy</code> – 晋语，<code>cmn</code> – 普通话或國語，<code>cpx</code> – 莆仙语，<code>czh</code> – 徽语，<code>czo</code> – 闽中语，<code>gan</code> – 赣语，<code>hak</code> – 客家话，<code>hsn</code> – 湘语，<code>mnp</code> – 闽北语，<code>nan</code> – 闽南语，<code>wuu</code> – 吴语，<code>yue</code> – 粤语，<code>lzh</code> - 文言文。</p>
+<p>2009年9月发布的 <a href="https://www.ietf.org/rfc/bcp/bcp47.txt" title="BCP47">BCP47</a>{:target=&quot;_blank&quot;} 整合了 <a href="https://tools.ietf.org/rfc/rfc4647.txt" title="RFC4647">RFC4647</a>{:target=&quot;_blank&quot;} 和 <a href="https://tools.ietf.org/rfc/rfc5646.txt" title="RFC5646">RFC5646</a>{:target=&quot;_blank&quot;} 形成语言标签最佳实践，仍然使用<code>zh</code>作为大语文（macrolanguage）的标签，辅以 <a href="https://iso639-3.sil.org/code_tables/639/data" title="ISO639-3">ISO639-3</a>{:target=&quot;_blank&quot;} 中引入的另外14种语文标签作为方言扩展标签，但推荐方言扩展标签直接作为主语言标签。因此，赣语的标签以<code>zh-gan</code>或 <code>gan</code>开头、粤语以<code>zh-yue</code>或<code>yue</code>开头、普通话以<code>zh-cmn</code>或<code>cmn</code>开头，<a href="https://www.ietf.org/rfc/bcp/bcp47.txt" title="BCP47">BCP47</a>{:target=&quot;_blank&quot;} 规范建议优先选择后者。但关于这点目前在业界是有争议的，普遍的观点是希望保留<code>zh</code>作为主语言标签，这样能更好的向前兼容。</p>
+<h3 id="iana-语言子标签注册表">IANA 语言子标签注册表</h3>
+<p>了解了语言标签规范的发展历史，我们再回到 <a href="https://www.ietf.org/rfc/bcp/bcp47.txt" title="BCP47">BCP47</a>{:target=&quot;_blank&quot;} 规范，语言标签描述规则中的以下子标签：</p>
+<pre><code>language - extlang - script - region - variant - extension - privateuse
+</code></pre>
+<p>在这些子标签中 推荐 使用 <a href="https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry" title="IANA语言子标签注册表">IANA语言子标签注册表</a>{:target=&quot;_blank&quot;} 中的子标签格式，这些格式通常是来源于各种 ISO 标准中的通用约定。</p>
+<p>示例1：region的取值 CN（中国）</p>
+<pre><code>%%
+Type: region
+Subtag: CN
+Description: China
+Added: 2005-10-16
+%%
+</code></pre>
+<p>示例2：script 的取值 Hans（简体中文）</p>
+<pre><code>%%
+Type: script
+Subtag: Hans
+Description: Han (Simplified variant)
+Added: 2005-10-16
+%%
+</code></pre>
+<h3 id="中文子标签一览">中文子标签一览</h3>
+<p><a href="https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry" title="IANA语言子标签注册表">IANA语言子标签注册表</a>{:target=&quot;_blank&quot;} 中，以下<code>extlang</code> 中的方言同时也被归类到了<code>language</code>中，<a href="https://www.ietf.org/rfc/bcp/bcp47.txt" title="BCP47">BCP47</a>{:target=&quot;_blank&quot;} 规范是建议将下面的<code>extlang</code> 直接作为主语言使用。我再测验W3C的web标准时，发现W3C仍然建议是主语言使用<code>zh</code>，而<code>extlang</code>作为扩展方言使用。</p>
+<h4 id="language">language</h4>
+<ul>
+<li><code>zh</code> 中国字或中国话</li>
+</ul>
+<h4 id="extlang">extlang</h4>
+<ul>
+<li><code>cdo</code> 闽东语</li>
+<li><code>cjy</code> 晋语</li>
+<li><code>cmn</code> 普通话或國語</li>
+<li><code>cpx</code> 莆仙语</li>
+<li><code>czh</code> 徽语</li>
+<li><code>czo</code> 闽中语</li>
+<li><code>gan</code> 赣语</li>
+<li><code>hak</code> 客家话</li>
+<li><code>hsn</code> 湘语</li>
+<li><code>mnp</code> 闽北语</li>
+<li><code>nan</code> 闽南语</li>
+<li><code>wuu</code> 吴语</li>
+<li><code>yue</code> 粤语</li>
+<li><code>lzh</code> 文言文</li>
+</ul>
+<h3 id="script">script</h3>
+<ul>
+<li><code>Hans</code> 简体汉字</li>
+<li><code>Hant</code> 繁体汉字</li>
+</ul>
+<h3 id="region">region</h3>
+<ul>
+<li><code>CN</code> CHINA 中国</li>
+<li><code>HK</code> HONG KONG 香港</li>
+<li><code>TW</code> Taiwan 台湾</li>
+<li><code>SG</code> Singapore 新加坡</li>
+</ul>
+<h3 id="正确的写法">正确的写法</h3>
+<p>综上所述，从 <a href="https://www.ietf.org/rfc/bcp/bcp47.txt" title="BCP47">BCP47</a>{:target=&quot;_blank&quot;} 规范的定义中，我们不难发现<code>zh-CN</code>这种语言标签的写法已经过时，不符合规范，所以我从网上摘抄了一些标准的写法——</p>
+<h4 id="文字例子">文字例子</h4>
+<p><code>圆珠笔</code>  zh-Hans-CN<!-- raw HTML omitted -->
+<code>原子筆</code>  zh-Hant-TW<!-- raw HTML omitted -->
+<code>它是一个刮胡刀</code>   zh-Hans-CN<!-- raw HTML omitted -->
+<code>佢系一个须刨嚟嘅</code>   yue-Hans<!-- raw HTML omitted -->
+<code>佢係一個鬚刨嚟嘅</code>   yue-Hant<!-- raw HTML omitted -->
+<code>驴不胜怒，蹄之</code>   zh-lzh-Hans<!-- raw HTML omitted -->
+<code>驢不勝怒，蹄之</code>   zh-lzh-Hant<!-- raw HTML omitted -->
+<code>驴发怒，踢他了</code>   zh-Hans-CN<!-- raw HTML omitted --></p>
+<h3 id="语言标签解释">语言标签解释</h3>
+<p><code>zh-Hans</code>   简体中文（个人推荐）<!-- raw HTML omitted -->
+<code>zh-Hans-CN</code>   以简体中文书写的中国大陆用词<!-- raw HTML omitted -->
+<code>zh-Hans-HK</code>   以简体中文书写的香港地区用词<!-- raw HTML omitted -->
+<code>zh-Hant</code>   繁體中文<!-- raw HTML omitted -->
+<code>zh-Hant-HK</code>   以繁體中文書寫的香港地區用詞<!-- raw HTML omitted -->
+<code>zh-Hant-TW</code>   以繁體中文書寫的台灣地區用詞<!-- raw HTML omitted -->
+<code>yue</code>   粤语发音<!-- raw HTML omitted -->
+<code>cmn</code>   普通话或國語发音<!-- raw HTML omitted -->
+<code>yue-Hans</code>   以简体中文书写的粤语用词<!-- raw HTML omitted -->
+<code>zh-yue-Hans</code>   以简体中文书写的粤语用词（个人推荐）<!-- raw HTML omitted -->
+<code>yue-Hant</code>   以繁體中文書寫的粵語用詞<!-- raw HTML omitted -->
+<code>cmn-Hans</code>   以简体中文书写的普通话用词<!-- raw HTML omitted -->
+<code>zh-cmn-Hans</code>   以简体中文书写的普通话用词（个人推荐）<!-- raw HTML omitted -->
+<code>cmn-Hans-CN</code>   以简体中文书写的中国大陆普通话用词<!-- raw HTML omitted -->
+<code>cmn-Hant-HK</code>   以繁體中文書寫的香港地区普通話用詞<!-- raw HTML omitted -->
+<code>cmn-Hant-TW</code>   以繁體中文書寫的台湾地区國語用詞<!-- raw HTML omitted --></p>
+<h3 id="资料参考">资料参考</h3>
+<ul>
+<li><em><a href="https://www.cnblogs.com/sink_cup/archive/2011/04/15/written_language_and_spoken_language.html" title="www.cnblogs.com/sink_cup/ar…">www.cnblogs.com/sink_cup/ar…</a>{:target=&quot;_blank&quot;}</em></li>
+<li><em><a href="https://www.cnblogs.com/sink_cup/archive/2010/07/01/language_subtag_registry.html" title="www.cnblogs.com/sink_cup/ar…">www.cnblogs.com/sink_cup/ar…</a>{:target=&quot;_blank&quot;}</em></li>
+<li><em><a href="https://www.jianshu.com/p/f00414cc566e" title="www.jianshu.com/p/f00414cc5…">www.jianshu.com/p/f00414cc5…</a></em></li>
+<li><em><a href="https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry" title="www.iana.org/assignments…">www.iana.org/assignments…</a>{:target=&quot;_blank&quot;}</em></li>
+<li><em><a href="https://zh.wikipedia.org/wiki/IETF%E8%AA%9E%E8%A8%80%E6%A8%99%E7%B1%A4#cite_note-10" title="zh.wikipedia.org/wiki/IETF%E…">zh.wikipedia.org/wiki/IETF%E…</a>{:target=&quot;_blank&quot;}</em></li>
+<li><em><a href="https://zhuanlan.zhihu.com/p/29305702" title="zhuanlan.zhihu.com/p/29305702">zhuanlan.zhihu.com/p/29305702</a>{:target=&quot;_blank&quot;}</em></li>
+<li><em><a href="https://www.zhihu.com/question/21980689/answer/93615123" title="www.zhihu.com/question/21…">www.zhihu.com/question/21…</a>{:target=&quot;_blank&quot;}</em></li>
+<li><em><a href="https://www.ietf.org/rfc/bcp/bcp47.txt" title="www.ietf.org/rfc/bcp/bcp…">www.ietf.org/rfc/bcp/bcp…</a>{:target=&quot;_blank&quot;}</em></li>
+<li><em><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Global_attributes/lang" title="developer.mozilla.org/zh-CN/docs/…">developer.mozilla.org/zh-CN/docs/…</a>{:target=&quot;_blank&quot;}</em></li>
+</ul>
+
+    </div>
+  </article>
+
+  
+  
+
+
+
+
+
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">🏠主页</a></li>
+         
+          <li><a href="/posts">🗓归档</a></li>
+         
+          <li><a href="/about">🤔关于</a></li>
+         
+          <li><a href="/friend">🔗友链</a></li>
+        
+      </ul>
+    </div>
+
+    
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="https://service.weibo.com/share/share.php?appkey=1881139527&title=HTML%20lang%e6%b2%a1%e6%83%b3%e8%b1%a1%e4%b8%ad%e7%9a%84%e9%82%a3%e4%b9%88%e7%ae%80%e5%8d%95&url=http%3a%2f%2flocalhost%3a1313%2fposts%2f20201115%2f" aria-label="Weibo">
+      <i class="fab fa-weibo fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pan.baidu.com/share/qrcode?w=512&h=512&url=http%3a%2f%2flocalhost%3a1313%2fposts%2f20201115%2f" aria-label="WeChat">
+      <i class="fab fa-weixin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=http%3a%2f%2flocalhost%3a1313%2fposts%2f20201115%2f&text=HTML%20lang%e6%b2%a1%e6%83%b3%e8%b1%a1%e4%b8%ad%e7%9a%84%e9%82%a3%e4%b9%88%e7%ae%80%e5%8d%95" aria-label="x-twitter">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http%3a%2f%2flocalhost%3a1313%2fposts%2f20201115%2f&is_video=false&description=HTML%20lang%e6%b2%a1%e6%83%b3%e8%b1%a1%e4%b8%ad%e7%9a%84%e9%82%a3%e4%b9%88%e7%ae%80%e5%8d%95" aria-label="Pinterest">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=HTML%20lang%e6%b2%a1%e6%83%b3%e8%b1%a1%e4%b8%ad%e7%9a%84%e9%82%a3%e4%b9%88%e7%ae%80%e5%8d%95&body=Check out this article: http%3a%2f%2flocalhost%3a1313%2fposts%2f20201115%2f" aria-label="Email">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+ </ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;" aria-label="Menu">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').toggle();return false;" aria-label="Share">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2025  穷光蛋博客 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">🏠主页</a></li>
+         
+        <li><a href="/posts">🗓归档</a></li>
+         
+        <li><a href="/about">🤔关于</a></li>
+         
+        <li><a href="/friend">🔗友链</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+
+<script src=/js/code-copy.js></script>
+
+
+
+
+</html>
