@@ -1,0 +1,60 @@
+baseURL = 'https://qiong.me/'
+languageCode = 'zh-CN'
+title = '穷光蛋博客'
+theme = "Cactus"
+
+[params]
+  colortheme = "classic" # dark, light, white, or classic
+  description = "有些人，你看见他整天都开心，率真得像个小孩，人人都羡慕他。其实，他就像向日葵，向着太阳的正面永远明媚，在照不到的背面将悲伤深藏。"
+  showAllPostsOnHomePage = false
+  postsOnHomePage = 5
+  rss = true
+  tocInline = true
+  showAllPostsArchive = true
+  publishDir = "tale.bitbucket.io"
+  # css = ["css/custom.css"]
+
+
+[Permalinks]
+  posts = "/posts/:year:month:day"
+  
+
+# Main menu which appears below site header.
+[[menu.main]]
+  name = "🏠主页"
+  url = "/"
+  weight = 1
+
+[[menu.main]]
+  name = "🗓归档"
+  url = "/posts"
+  weight = 2
+
+[[menu.main]]
+  name = "🤔关于"
+  url = "/about"
+  weight = 3
+
+[[menu.main]]
+  name = "🔗友链"
+  url = "/friend"
+  weight = 4
+  
+
+# Social media links
+[[params.social]]
+  name = "telegram"
+  link = "https://t.me/qiong"
+
+[[params.social]]
+  name = "mastodon"
+  link = "https://mastodon.social/@qiong"
+  
+[[params.social]]
+  name = "github"
+  link = "https://github.com/ColinAZ/blog"
+
+[[params.social]]
+  name = "rss"
+  link = "/index.xml"
+
