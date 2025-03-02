@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> 利用阿里云CDN反代微博图床 | 穷光蛋博客🥚Qiong.me</title>
+  <link rel = 'canonical' href = 'http://localhost:1313/posts/20201203/'>
+  <meta name="description" content="有些人，你看见他整天都开心，率真得像个小孩，人人都羡慕他。其实，他就像向日葵，向着太阳的正面永远明媚，在照不到的背面将悲伤深藏。">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:url" content="http://localhost:1313/posts/20201203/">
+  <meta property="og:site_name" content="穷光蛋博客">
+  <meta property="og:title" content="利用阿里云CDN反代微博图床">
+  <meta property="og:description" content="之前有评论说顶部的图片不好看，所以最近一口气把博客的顶部配图全换了。新版的顶部多采用淡色视觉系的图片，这样博客看起来会更加整体和融合。另外，博客也换了新图床——免费的新浪图床。话说，新浪微博开启防盗链不再支持图床已经有段时间了，期间大家也陆陆续续把图片迁移到其他文件存储或图床了。但是还是会有一些人和我一样不死心，开始研究起微博座位图床的新方法，毕竟微博是个好图床，免费不限量，快速又稳定。被大家提及最多的就是允许空Refer访问。虽然这个方法在Chrome浏览器上可以添加代码让图片正常加载，但是空Refer访问的兼容性不好。于是就有了使用阿里云CDN反代新浪图床的方法。
+配置过程 1.现在阿里云CDN的管理页面中添加一个你想用于图床图片链接的域名的CDN，比如我用img.y.cooly.cool作为图床域名。声明，如果你的CDN选择了要在中国大陆加速，那么这个域名必须备案才可以。
+2.由于新浪图床的地址本身就是一个CDN域名，所以源站地址里不能填新浪图床的域名，需要查询到新浪图床某个具体的CDN IP地址，端口选择HTTPS。
+3.添加好后，把阿里云给出的CNAME配置到你的NS服务上。
+4.在回源设置中打开回源Host，域名填一个新浪的图床域名，随便哪个都行，比如我填写的是tva1.sinaimg.cn，如下图
+5.在这个页面下方，也顺便把回源SNI一并设置一下，地址跟前面的域名地址地址一样就行。
+6.签一个这个图床CDN域名的证书，或者你域名的通配符证书，然后在HTTPS设置中把证书添加一下。
+7.打开HTTP/2。
+8.打开TLS1.3，关闭1.0和1.1。
+9.打开防盗链，建议选择白名单，这样避免你的CDN图床流量被别人盗用。
+使用新浪图床，你还需要知道的—— 1.将图片上传至新浪图床，工具一大堆，你要用Chrome的话在商店随便搜就有，比如我在用的微博图床插件。
+2.不管你用的什么工具上传，请务必勾选https。
+3.上传后图床插件可能给出的图片地址并不是回源配置里的tva1.sinaimg.cn，这个时候，你需要在浏览器中使用tva1.sinaimg.cn进行图片访问一次，否则CDN图片调用可能会出现508错误。安全起见，在通过tva1.sinaimg.cn访问图片之后，你再用CDN域名访问一次图片，以确保图片被正确缓存。">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2020-12-03T17:17:00+08:00">
+    <meta property="article:modified_time" content="2020-12-03T17:17:00+08:00">
+
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="利用阿里云CDN反代微博图床">
+  <meta name="twitter:description" content="之前有评论说顶部的图片不好看，所以最近一口气把博客的顶部配图全换了。新版的顶部多采用淡色视觉系的图片，这样博客看起来会更加整体和融合。另外，博客也换了新图床——免费的新浪图床。话说，新浪微博开启防盗链不再支持图床已经有段时间了，期间大家也陆陆续续把图片迁移到其他文件存储或图床了。但是还是会有一些人和我一样不死心，开始研究起微博座位图床的新方法，毕竟微博是个好图床，免费不限量，快速又稳定。被大家提及最多的就是允许空Refer访问。虽然这个方法在Chrome浏览器上可以添加代码让图片正常加载，但是空Refer访问的兼容性不好。于是就有了使用阿里云CDN反代新浪图床的方法。
+配置过程 1.现在阿里云CDN的管理页面中添加一个你想用于图床图片链接的域名的CDN，比如我用img.y.cooly.cool作为图床域名。声明，如果你的CDN选择了要在中国大陆加速，那么这个域名必须备案才可以。
+2.由于新浪图床的地址本身就是一个CDN域名，所以源站地址里不能填新浪图床的域名，需要查询到新浪图床某个具体的CDN IP地址，端口选择HTTPS。
+3.添加好后，把阿里云给出的CNAME配置到你的NS服务上。
+4.在回源设置中打开回源Host，域名填一个新浪的图床域名，随便哪个都行，比如我填写的是tva1.sinaimg.cn，如下图
+5.在这个页面下方，也顺便把回源SNI一并设置一下，地址跟前面的域名地址地址一样就行。
+6.签一个这个图床CDN域名的证书，或者你域名的通配符证书，然后在HTTPS设置中把证书添加一下。
+7.打开HTTP/2。
+8.打开TLS1.3，关闭1.0和1.1。
+9.打开防盗链，建议选择白名单，这样避免你的CDN图床流量被别人盗用。
+使用新浪图床，你还需要知道的—— 1.将图片上传至新浪图床，工具一大堆，你要用Chrome的话在商店随便搜就有，比如我在用的微博图床插件。
+2.不管你用的什么工具上传，请务必勾选https。
+3.上传后图床插件可能给出的图片地址并不是回源配置里的tva1.sinaimg.cn，这个时候，你需要在浏览器中使用tva1.sinaimg.cn进行图片访问一次，否则CDN图片调用可能会出现508错误。安全起见，在通过tva1.sinaimg.cn访问图片之后，你再用CDN域名访问一次图片，以确保图片被正确缓存。">
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/styles.daecc16c2c5f5c1a5e534660d1e54f103bed9127ff961e72a63f945699768630fd9868b3eec45e98bdeb7fb78c2b3a251c6cdad430dc7648f5ddb5c16eaf9b10.css" integrity="sha512-2uzBbCxfXBpeU0Zg0eVPEDvtkSf/lh5ypj&#43;UVpl2hjD9mGiz7sRemL3rf7eMKzolHGza1DDcdkj13bXBbq&#43;bEA=="> 
+
+  
+  
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  <link rel=icon type=image/svg+xml href=http://localhost:1313/images/favicon.svg>
+  
+  
+  
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div id="header-post">
+  <a id="menu-icon" href="#">🥚</a>
+  <a id="menu-icon-tablet" href="#">🥚</a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">🏠主页</a></li>
+         
+        <li><a href="/posts">🗓归档</a></li>
+         
+        <li><a href="/about">🤔关于</a></li>
+         
+        <li><a href="/friend">🔗友链</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" http://localhost:1313/posts/20201120/" aria-label="Previous">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="http://localhost:1313/posts/20201206/" aria-label="Next">
+            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
+          </a>
+        </li>
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#" aria-label="Share">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇文章</span>
+      <span id="i-next" class="info" style="display:none;">下一篇文章</span>
+      <span id="i-top" class="info" style="display:none;">返回到顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享到外部</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="https://service.weibo.com/share/share.php?appkey=1881139527&title=%e5%88%a9%e7%94%a8%e9%98%bf%e9%87%8c%e4%ba%91CDN%e5%8f%8d%e4%bb%a3%e5%be%ae%e5%8d%9a%e5%9b%be%e5%ba%8a&url=http%3a%2f%2flocalhost%3a1313%2fposts%2f20201203%2f" aria-label="Weibo">
+      <i class="fab fa-weibo " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pan.baidu.com/share/qrcode?w=512&h=512&url=http%3a%2f%2flocalhost%3a1313%2fposts%2f20201203%2f" aria-label="WeChat">
+      <i class="fab fa-weixin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=http%3a%2f%2flocalhost%3a1313%2fposts%2f20201203%2f&text=%e5%88%a9%e7%94%a8%e9%98%bf%e9%87%8c%e4%ba%91CDN%e5%8f%8d%e4%bb%a3%e5%be%ae%e5%8d%9a%e5%9b%be%e5%ba%8a" aria-label="x-twitter">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http%3a%2f%2flocalhost%3a1313%2fposts%2f20201203%2f&is_video=false&description=%e5%88%a9%e7%94%a8%e9%98%bf%e9%87%8c%e4%ba%91CDN%e5%8f%8d%e4%bb%a3%e5%be%ae%e5%8d%9a%e5%9b%be%e5%ba%8a" aria-label="Pinterest">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=%e5%88%a9%e7%94%a8%e9%98%bf%e9%87%8c%e4%ba%91CDN%e5%8f%8d%e4%bb%a3%e5%be%ae%e5%8d%9a%e5%9b%be%e5%ba%8a&body=Check out this article: http%3a%2f%2flocalhost%3a1313%2fposts%2f20201203%2f" aria-label="Email">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+ </ul>
+
+    </div>
+    
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <ol class="nav navbar-nav">
+         <li><a href="http://localhost:1313/">穷光蛋博客</a></li>
+         <li><a href="http://localhost:1313/posts/">Posts</a></li>
+ <li class="active" aria-current="page">
+    <a href="http://localhost:1313/posts/20201203/">利用阿里云CDN反代微博图床</a>
+  </li>
+</ol>
+      <h1 class="posttitle" itemprop="name headline">
+        利用阿里云CDN反代微博图床
+      </h1>
+      <div class="meta">
+        
+        <div class="postdate">
+          
+          <time datetime="2020-12-03 17:17:00 &#43;0800 CST" itemprop="datePublished">2020-12-03</time>
+          
+        </div>
+        
+        
+        
+        
+      </div>
+    </header>
+
+  
+    
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#配置过程">配置过程</a></li>
+    <li><a href="#使用新浪图床你还需要知道的">使用新浪图床，你还需要知道的——</a></li>
+  </ul>
+</nav>
+    </div>
+    
+    <div class="content" itemprop="articleBody">
+      <p>之前有评论说顶部的图片不好看，所以最近一口气把博客的顶部配图全换了。新版的顶部多采用淡色视觉系的图片，这样博客看起来会更加整体和融合。另外，博客也换了新图床——免费的新浪图床。话说，新浪微博开启防盗链不再支持图床已经有段时间了，期间大家也陆陆续续把图片迁移到其他文件存储或图床了。但是还是会有一些人和我一样不死心，开始研究起微博座位图床的新方法，毕竟微博是个好图床，免费不限量，快速又稳定。被大家提及最多的就是允许空Refer访问。虽然这个方法在Chrome浏览器上可以添加代码让图片正常加载，但是空Refer访问的兼容性不好。于是就有了使用阿里云CDN反代新浪图床的方法。</p>
+<h2 id="配置过程">配置过程</h2>
+<p>1.现在阿里云CDN的管理页面中添加一个你想用于图床图片链接的域名的CDN，比如我用<code>img.y.cooly.cool</code>作为图床域名。声明，如果你的CDN选择了要在中国大陆加速，那么这个域名必须备案才可以。</p>
+<p>2.由于新浪图床的地址本身就是一个CDN域名，所以<code>源站地址</code>里不能填新浪图床的域名，需要查询到新浪图床某个具体的CDN IP地址，端口选择<code>HTTPS</code>。</p>
+<p>3.添加好后，把阿里云给出的CNAME配置到你的NS服务上。</p>
+<p>4.在<code>回源设置</code>中打开回源Host，域名填一个新浪的图床域名，随便哪个都行，比如我填写的是<code>tva1.sinaimg.cn</code>，如下图</p>
+<p><img src="https://db3.obs.cn-east-4.myhuaweicloud.com/album/20201203-1.jpg" alt=""></p>
+<p>5.在这个页面下方，也顺便把回源SNI一并设置一下，地址跟前面的<code>域名地址</code>地址一样就行。</p>
+<p><img src="https://db3.obs.cn-east-4.myhuaweicloud.com/album/20201203-2.jpg" alt=""></p>
+<p>6.签一个这个图床CDN域名的证书，或者你域名的通配符证书，然后在<code>HTTPS设置</code>中把证书添加一下。</p>
+<p>7.打开HTTP/2。</p>
+<p>8.打开TLS1.3，关闭1.0和1.1。</p>
+<p>9.打开防盗链，建议选择白名单，这样避免你的CDN图床流量被别人盗用。</p>
+<h2 id="使用新浪图床你还需要知道的">使用新浪图床，你还需要知道的——</h2>
+<p>1.将图片上传至新浪图床，工具一大堆，你要用Chrome的话在商店随便搜就有，比如我在用的<code>微博图床</code>插件。</p>
+<p><img src="https://db3.obs.cn-east-4.myhuaweicloud.com/album/20201203-3.jpg" alt=""></p>
+<p>2.不管你用的什么工具上传，请务必勾选<code>https</code>。</p>
+<p>3.上传后图床插件可能给出的图片地址并不是回源配置里的<code>tva1.sinaimg.cn</code>，这个时候，你需要在浏览器中使用<code>tva1.sinaimg.cn</code>进行图片访问一次，否则CDN图片调用可能会出现508错误。安全起见，在通过<code>tva1.sinaimg.cn</code>访问图片之后，你再用CDN域名访问一次图片，以确保图片被正确缓存。</p>
+
+    </div>
+  </article>
+
+  
+  
+
+
+
+
+
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">🏠主页</a></li>
+         
+          <li><a href="/posts">🗓归档</a></li>
+         
+          <li><a href="/about">🤔关于</a></li>
+         
+          <li><a href="/friend">🔗友链</a></li>
+        
+      </ul>
+    </div>
+
+    
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="https://service.weibo.com/share/share.php?appkey=1881139527&title=%e5%88%a9%e7%94%a8%e9%98%bf%e9%87%8c%e4%ba%91CDN%e5%8f%8d%e4%bb%a3%e5%be%ae%e5%8d%9a%e5%9b%be%e5%ba%8a&url=http%3a%2f%2flocalhost%3a1313%2fposts%2f20201203%2f" aria-label="Weibo">
+      <i class="fab fa-weibo fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pan.baidu.com/share/qrcode?w=512&h=512&url=http%3a%2f%2flocalhost%3a1313%2fposts%2f20201203%2f" aria-label="WeChat">
+      <i class="fab fa-weixin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=http%3a%2f%2flocalhost%3a1313%2fposts%2f20201203%2f&text=%e5%88%a9%e7%94%a8%e9%98%bf%e9%87%8c%e4%ba%91CDN%e5%8f%8d%e4%bb%a3%e5%be%ae%e5%8d%9a%e5%9b%be%e5%ba%8a" aria-label="x-twitter">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http%3a%2f%2flocalhost%3a1313%2fposts%2f20201203%2f&is_video=false&description=%e5%88%a9%e7%94%a8%e9%98%bf%e9%87%8c%e4%ba%91CDN%e5%8f%8d%e4%bb%a3%e5%be%ae%e5%8d%9a%e5%9b%be%e5%ba%8a" aria-label="Pinterest">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=%e5%88%a9%e7%94%a8%e9%98%bf%e9%87%8c%e4%ba%91CDN%e5%8f%8d%e4%bb%a3%e5%be%ae%e5%8d%9a%e5%9b%be%e5%ba%8a&body=Check out this article: http%3a%2f%2flocalhost%3a1313%2fposts%2f20201203%2f" aria-label="Email">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+ </ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;" aria-label="Menu">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').toggle();return false;" aria-label="Share">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2025  穷光蛋博客 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">🏠主页</a></li>
+         
+        <li><a href="/posts">🗓归档</a></li>
+         
+        <li><a href="/about">🤔关于</a></li>
+         
+        <li><a href="/friend">🔗友链</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+
+<script src=/js/code-copy.js></script>
+
+
+
+
+</html>
